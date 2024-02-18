@@ -2,7 +2,7 @@ export default {
   COLORS: {
     LIGHT_100: "#ffffff",
     LIGHT_200: "#FFFAF1",
-    LIGHT_300: "#E1E1E6 ",
+    LIGHT_300: "#E1E1E6",
     LIGHT_400: "#C4C4CC",
     LIGHT_500: "#7C7C8A",
     LIGHT_600: "#76797B",

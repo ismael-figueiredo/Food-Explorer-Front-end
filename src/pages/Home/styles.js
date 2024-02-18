@@ -21,6 +21,7 @@ export const Container = styled.div`
       text-align: left;
       width: 100%;
       height: 100%;
+      margin-left: -1.5rem;
 
       > div {
         display: flex;
@@ -30,15 +31,19 @@ export const Container = styled.div`
           padding-top: 2.25rem;
           font-size: 1.125rem;
           font-weight: 600;
+          font-size: 1.125rem;
+          line-height: 140%;
         }
 
         p {
+          padding-top: 0.2rem;
           max-width: 200px;
-          font-family: "Roboto", sans-serif;
+          font-family: "Poppins", sans-serif;
           padding-right: 0.5rem;
           font-size: 0.75rem;
           font-weight: 400;
           line-height: 1.05rem;
+          line-height: 140%;
         }
       }
     }
@@ -52,6 +57,18 @@ export const Container = styled.div`
   }
   .Macarons {
     display: none;
+  }
+ h3:first-of-type {
+      margin-top:3.88rem ;
+      margin-left: 1.1rem;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 140%;
+    }
+  .MainDishes {
+    display: flex;
+    overflow-x:auto;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
@@ -74,6 +91,7 @@ export const Container = styled.div`
             line-height: 3.5rem;
           }
           p {
+            font-family: "Roboto", sans-serif;
             max-width: 100%;
             font-size: 1rem;
           }

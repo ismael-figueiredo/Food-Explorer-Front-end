@@ -2,6 +2,7 @@ import { Container } from "./styles"
 import { MobileHeader } from "../../components/MobileHeader"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
+import { DishCard } from "../../components/DishCard"
 import MobileMacarons from "../../assets/macarons.png"
 import Macarons from "../../assets/macarons2.png"
 
@@ -24,9 +25,15 @@ export function Home() {
         <div>
           <div>
             <h2>Sabores inigualáveis</h2>
-            <p>Sinta o cuidado do preparo com  ingredientes selecionados.</p>
+            <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </div>
         </div>
+      </section>
+      <h3>Refeições</h3>
+      <section className="MainDishes">
+        <DishCard />
+        <DishCard />
+        <DishCard />
       </section>
       <Footer />
     </Container>
