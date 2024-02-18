@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
   position: relative;
@@ -42,6 +43,17 @@ export const Container = styled.div`
     font-weight: 500;
     line-height: 1.5rem;
   }
+
+  p {
+    max-width: 16rem;
+    text-align: center;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+    font-size: 0.875rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 160%;
+    display: none;
+  }
   .DishPrice {
     color: ${({ theme }) => theme.COLORS.CAKE_100};
     font-family: "Roboto", sans-serif;
@@ -61,12 +73,13 @@ export const Container = styled.div`
       border: none;
       color: ${({ theme }) => theme.COLORS.LIGHT_300};
       &:hover {
+        background-color: transparent;
         transform: scale(1.1);
         transition: all 0.2s;
       }
     }
   }
-  > button {
+  button {
     width: 10.125rem;
     height: 2rem;
 
@@ -85,6 +98,58 @@ export const Container = styled.div`
     &:hover {
       background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
       transition: all 0.2s;
+    }
+  }
+  .DishFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    gap: 0.94rem;
+    min-width: 19rem;
+    height: 28.8rem;
+    img {
+      width: 11rem;
+      height: 11rem;
+    }
+    .DishName {
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 700;
+    }
+    .DishPrice {
+      font-size: 2rem;
+
+      font-weight: 400;
+      line-height: 160%;
+    }
+    .DishFooter {
+      flex-direction: row;
+      gap: 1rem;
+      button {
+        width: 5.75rem;
+        height: 3rem;
+      }
+    }
+    .AmountDish {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 6.25rem;
+
+      span {
+        font-size: 1.25rem;
+
+        font-weight: 700;
+        padding-bottom: 0.4rem;
+      }
+    }
+    p {
+      display: block;
     }
   }
 `

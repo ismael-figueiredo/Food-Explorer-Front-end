@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Container } from "./styles"
 import DishImage from "../../assets/Mask group-1.png"
-import { LuPlus, LuMinus, LuChevronRight } from "react-icons/lu"
+import { LuPlus, LuMinus } from "react-icons/lu"
+import { TiChevronRight } from "react-icons/ti"
 import { FaRegHeart, FaHeart } from "react-icons/fa"
 import { PiPencilSimple } from "react-icons/pi"
 
@@ -12,7 +13,7 @@ const Dish = {
   description: "Presunto de parma e rúcula em um pão com fermentação natural.",
 }
 
-export function DishCard({ isAdmin = true }) {
+export function DishCard({ isAdmin = false }) {
   const [fav, setFav] = useState(false)
   const [amount, setAmount] = useState(0)
 
@@ -41,23 +42,26 @@ export function DishCard({ isAdmin = true }) {
       <img src={Dish.image} alt={`Imagem do item ${Dish.name}`} />
       <span className="DishName">
         {Dish.name}
-        <LuChevronRight />
+        <TiChevronRight />
       </span>
+      <p>{Dish.description}</p>
       <span className="DishPrice">{`R$ ${Dish.price}`}</span>
-      <div className="AmountDish">
-        {!isAdmin && (
-          <button onClick={decreaseAmount}>
-            <LuMinus size="1.5rem" />
-          </button>
-        )}
-        {!isAdmin && <span>{amount}</span>}
-        {!isAdmin && (
-          <button onClick={increaseAmount}>
-            <LuPlus size="1.5rem" />
-          </button>
-        )}
+      <div className="DishFooter">
+        <div className="AmountDish">
+          {!isAdmin && (
+            <button onClick={decreaseAmount}>
+              <LuMinus size="1.5rem" />
+            </button>
+          )}
+          {!isAdmin && <span>{`${amount}`.padStart(2, "0")}</span>}
+          {!isAdmin && (
+            <button onClick={increaseAmount}>
+              <LuPlus size="1.5rem" />
+            </button>
+          )}
+        </div>
+        {!isAdmin && <button>incluir</button>}
       </div>
-      {!isAdmin && <button>incluir</button>}
     </Container>
   )
 }
