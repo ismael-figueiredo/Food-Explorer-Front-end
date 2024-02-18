@@ -3,6 +3,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,28 +32,35 @@ export const Container = styled.div`
   img {
     width: 5.5rem;
     height: 5.5rem;
+    user-select: none;
   }
 
   .DishName {
     display: flex;
+    max-height: 2rem;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 15.5rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
-
     font-family: "Poppins", sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.5rem;
   }
-
   p {
     max-width: 16rem;
+    max-height: 1rem;
+
     text-align: center;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     font-size: 0.875rem;
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
     line-height: 160%;
     display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .DishPrice {
     color: ${({ theme }) => theme.COLORS.CAKE_100};

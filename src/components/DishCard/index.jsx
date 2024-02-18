@@ -11,11 +11,11 @@ export function DishCard({
   price,
   description,
   isAdmin = false,
-  initialAmount = 1, 
-  isFavorite = false, 
+  initialAmount = 1,
+  isFavorite = false,
 }) {
-  const [fav, setFav] = useState(isFavorite) 
-  const [amount, setAmount] = useState(initialAmount) 
+  const [fav, setFav] = useState(isFavorite)
+  const [amount, setAmount] = useState(initialAmount)
   const [totalPrice, setTotalPrice] = useState(
     parseFloat(price.replace(",", ".")) * initialAmount
   )
@@ -39,7 +39,7 @@ export function DishCard({
         </button>
       )}
       {isAdmin && (
-        <button className="EditDish">
+        <button className="FavDish">
           <PiPencilSimple size="1.5rem" />
         </button>
       )}

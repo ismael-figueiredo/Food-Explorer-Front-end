@@ -4,6 +4,8 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Carousel } from "../../components/Carousel"
 import DishImage from "../../assets/Mask group-1.png"
+import DessertImage from "../../assets/Mask group-4.png"
+import DrinkImage from "../../assets/Mask group-11.png"
 import MobileMacarons from "../../assets/macarons.png"
 import Macarons from "../../assets/macarons2.png"
 
@@ -46,33 +48,33 @@ const meals = [
 
 const desserts = [
   {
-    name: "Cheesecake de Morango",
+    name: "Cheesecake",
     description: "Cheesecake cremoso com cobertura de morango.",
-    image: DishImage,
+    image: DessertImage,
     price: "30,00",
   },
   {
     name: "Tiramisu",
     description: "Clássico tiramisu italiano com mascarpone e café.",
-    image: DishImage,
+    image: DessertImage,
     price: "35,00",
   },
   {
-    name: "Brownie de Chocolate",
+    name: "Brownie",
     description: "Brownie de chocolate intenso com nozes.",
-    image: DishImage,
+    image: DessertImage,
     price: "20,00",
   },
   {
     name: "Pudim de Leite",
     description: "Pudim de leite condensado caramelizado.",
-    image: DishImage,
+    image: DessertImage,
     price: "25,00",
   },
   {
     name: "Sorvete Artesanal",
     description: "Sorvete artesanal de baunilha com calda de chocolate.",
-    image: DishImage,
+    image: DessertImage,
     price: "15,00",
   },
 ]
@@ -81,31 +83,31 @@ const drinks = [
   {
     name: "Caipirinha",
     description: "Caipirinha de limão clássica com cachaça.",
-    image: DishImage,
+    image: DrinkImage,
     price: "22,00",
   },
   {
     name: "Mojito",
     description: "Mojito refrescante com rum, hortelã e limão.",
-    image: DishImage,
+    image: DrinkImage,
     price: "24,00",
   },
   {
     name: "Suco de Laranja",
     description: "Suco de laranja natural espremido na hora.",
-    image: DishImage,
+    image: DrinkImage,
     price: "10,00",
   },
   {
     name: "Água de Coco",
     description: "Água de coco natural e refrescante.",
-    image: DishImage,
+    image: DrinkImage,
     price: "8,00",
   },
   {
     name: "Café Expresso",
     description: "Café expresso forte e aromático.",
-    image: DishImage,
+    image: DrinkImage,
     price: "5,00",
   },
 ]

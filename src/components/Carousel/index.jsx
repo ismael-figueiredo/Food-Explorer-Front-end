@@ -1,5 +1,11 @@
 import { useRef } from "react"
-import { Container } from "./styles"
+import {
+  Container,
+  CarouselControls,
+  CarouselButton,
+  CategoryTitle,
+  MainDishes,
+} from "./styles"
 import { DishCard } from "../DishCard"
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
 
@@ -16,31 +22,27 @@ export function Carousel({ Category, Dishes }) {
 
   return (
     <Container>
-      <main>
-        <div>
-          <h3>{Category}</h3>
-        </div>
-        <div className="carouselControls">
-          <button className="prevButton" onClick={() => scroll("left")}>
-            <PiCaretLeftBold size={"2.5rem"} />
-          </button>
-          <button className="nextButton" onClick={() => scroll("right")}>
-            <PiCaretRightBold size={"2.5rem"} />
-          </button>
-        </div>
-        <section className="MainDishes" ref={dishesRef}>
-          {Dishes.map((dish, index) => (
-            <DishCard
-              key={index}
-              name={dish.name}
-              image={dish.image}
-              price={dish.price}
-              description={dish.description}
-              isAdmin={false}
-            />
-          ))}
-        </section>
-      </main>
+      <CategoryTitle>{Category}</CategoryTitle>
+      <CarouselControls>
+        <CarouselButton onClick={() => scroll("left")}>
+          <PiCaretLeftBold size={"2.5rem"} />
+        </CarouselButton>
+        <CarouselButton onClick={() => scroll("right")}>
+          <PiCaretRightBold size={"2.5rem"} />
+        </CarouselButton>
+      </CarouselControls>
+      <MainDishes ref={dishesRef}>
+        {Dishes.map((dish, index) => (
+          <DishCard
+            key={index}
+            name={dish.name}
+            image={dish.image}
+            price={dish.price}
+            description={dish.description}
+            isAdmin={false}
+          />
+        ))}
+      </MainDishes>
     </Container>
   )
 }
