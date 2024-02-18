@@ -115,6 +115,11 @@ export const Container = styled.div`
     img {
       width: 11rem;
       height: 11rem;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.03);
+        cursor: pointer;
+      }
     }
     .DishName {
       font-size: 1.5rem;
