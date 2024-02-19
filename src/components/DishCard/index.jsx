@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Container } from "./styles" // Certifique-se de que o caminho está correto
+import { Container } from "./styles" 
 import { LuPlus, LuMinus } from "react-icons/lu"
 import { TiChevronRight } from "react-icons/ti"
 import { FaRegHeart, FaHeart } from "react-icons/fa"

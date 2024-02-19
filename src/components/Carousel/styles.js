@@ -19,6 +19,7 @@ export const MainDishes = styled.section`
   min-width: 420px;
   max-width: 70rem;
   display: flex;
+  display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
 
@@ -26,11 +27,11 @@ export const MainDishes = styled.section`
     position: relative;
     display: flex;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    
   }
 `
 export const CategoryTitle = styled.div`
-  margin-top: 3.88rem;
+  margin-bottom: 1.5rem;
   margin-left: 1.1rem;
   font-family: "Poppins", sans-serif;
   font-size: 1.125rem;
@@ -70,11 +71,7 @@ export const CarouselControls = styled.div`
       top: 0;
       width: 13rem;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        rgba(0, 10, 15, 0.01) 0%,
-        #000a0f 100%
-      );
+      background: ${({ theme }) => theme.COLORS.GRADIENTS_100};
       pointer-events: none;
       z-index: -1;
     }

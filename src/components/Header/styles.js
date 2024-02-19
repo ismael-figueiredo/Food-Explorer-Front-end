@@ -21,14 +21,14 @@ export const Container = styled.header`
     flex-direction: column;
     justify-content: end;
 
-    > div {
+    div {
       display: flex;
       align-items: center;
       justify-content: end;
       gap: 8px;
       min-width: 16rem;
-      && h1 {
-        font-size: 1.32rem;
+      & h1 {
+        font-size: 1.5rem;
         font-weight: 700;
       }
       > img {
