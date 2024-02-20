@@ -4,7 +4,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 export const Container = styled.div`
   min-width: 420px;
   user-select: none;
-  cursor: pointer;
+  cursor: ${({ isDragging }) => (isDragging ? "grabbing" : "grab")};
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     main {
@@ -18,16 +18,17 @@ export const Container = styled.div`
 export const MainDishes = styled.section`
   min-width: 420px;
   max-width: 70rem;
+
   display: flex;
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     position: relative;
     display: flex;
     overflow-x: hidden;
-    
+    padding: 0 3rem;
   }
 `
 export const CategoryTitle = styled.div`
@@ -58,7 +59,7 @@ export const CarouselControls = styled.div`
     position: relative;
     top: 18rem;
     margin-top: -30rem;
-    min-width: 72rem;
+    min-width: 71rem;
     width: 80%;
     transform: translateY(12.5rem);
     z-index: 2;

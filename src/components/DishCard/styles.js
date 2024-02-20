@@ -21,9 +21,11 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.DARK_200};
 
   .FavDish {
+    height: 1.5rem;
+    width: 1.5rem;
     position: absolute;
     top: 1rem;
-    right: -3.2rem;
+    right: 1rem;
     background-color: transparent;
     &:hover {
       background-color: transparent;
