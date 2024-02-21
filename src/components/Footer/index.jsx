@@ -9,7 +9,7 @@ export function Footer() {
         <h2>food Explorer</h2>
       </div>
       <span>
-        © 2024 - Todos os direitos reservados @Ismael_Figueiredo.
+        © 2024 - By @Ismael_Figueiredo.
       </span>
     </Container>
   )

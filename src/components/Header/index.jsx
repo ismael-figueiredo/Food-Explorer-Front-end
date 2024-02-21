@@ -5,7 +5,7 @@ import { ReceiptButton } from "../ReceiptButton"
 import { LuSearch, LuLogOut } from "react-icons/lu"
 import Logo from "../../assets/logo.png"
 
-export function Header({ isadmin = true, ...rest }) {
+export function Header({ isadmin = false, ...rest }) {
   return (
     <Container>
       <div>

@@ -9,6 +9,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
 
+  width: 100%;
   min-width: 74rem;
   height: 6.5rem;
 
@@ -36,16 +37,16 @@ export const Container = styled.header`
       }
     }
     > span {
-      line-height: 0;
       display: block;
       text-align: end;
       color: ${({ theme }) => theme.COLORS.CAKE_100};
+      line-height: 160%;
       font-size: 0.75rem;
     }
   }
 
   > form {
-    max-width: 36rem;
+    max-width: 40rem;
   }
 
   > button:nth-last-child(2) {

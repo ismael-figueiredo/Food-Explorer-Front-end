@@ -7,11 +7,12 @@ export const Container = styled.header`
   }
   height: 7.12rem;
   min-width: 420px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 
   align-items: end;
-  padding-bottom: 1.37rem;
+  padding-bottom: 1.75rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 
@@ -25,7 +26,8 @@ export const Container = styled.header`
       font-size: 0.75rem;
     }
   }
-  > h1 {
+ h1 {
+    font-family: Roboto "sans-serif";
     font-size: 1.32rem;
     font-weight: 700;
   }
