@@ -2,6 +2,7 @@ import { Container } from "./styles"
 import DisabledLogo from "../../assets/DisabledLogo.png"
 
 export function Footer() {
+ 
   return (
     <Container>
       <div>
