@@ -2,6 +2,13 @@ import styled from "styled-components"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.footer`
+  main {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,8 +26,10 @@ export const Container = styled.footer`
   font-size: 0.75rem;
   font-weight: 400;
 
-  > div {
+  div {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 0.4rem;
     > img {
       height: 1.25rem;
@@ -32,9 +41,11 @@ export const Container = styled.footer`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    padding: 0 7.7rem;
+    main {
+     
+      max-width: 70rem;
+    }
 
-    min-width: 74rem;
     font: 0.85rem;
 
     > div {
