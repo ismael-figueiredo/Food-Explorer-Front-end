@@ -62,7 +62,7 @@ export const CarouselControls = styled.div`
     min-width: 71rem;
     width: 80%;
     transform: translateY(12.5rem);
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
 
     &::before,

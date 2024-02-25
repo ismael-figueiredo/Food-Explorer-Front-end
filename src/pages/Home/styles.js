@@ -3,6 +3,11 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
   min-width: 420px;
+  > main {
+    &[data-menu-is-open="true"] {
+      display: none;
+    }
+  }
 
   .Banner {
     min-width: 23.5rem;
@@ -60,11 +65,15 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    main {
+    > main {
       min-width: 74rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      &[data-menu-is-open="true"] {
+        display: flex;
+      }
     }
 
     .Banner {

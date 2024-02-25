@@ -8,6 +8,8 @@ import DessertImage from "../../assets/Mask group-4.png"
 import DrinkImage from "../../assets/Mask group-11.png"
 import MobileMacarons from "../../assets/macarons.png"
 import Macarons from "../../assets/macarons2.png"
+import { SidebarMenu } from "../../components/SidebarMenu"
+import { useState } from "react"
 
 const meals = [
   {
@@ -113,11 +115,17 @@ const drinks = [
 ]
 
 export function Home() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   return (
     <Container>
-      <MobileHeader />
+      <SidebarMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <MobileHeader onOpenMenu={() => setMenuIsOpen(true)} />
       <Header />
-      <main>
+
+      <main data-menu-is-open={menuIsOpen}>
         <section className="Banner">
           <img
             className="MobileMacarons"
@@ -143,6 +151,7 @@ export function Home() {
 
         <Carousel Category="Bebidas" Dishes={drinks} />
       </main>
+
       <Footer />
     </Container>
   )

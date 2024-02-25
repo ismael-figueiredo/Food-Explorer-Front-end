@@ -9,11 +9,13 @@ export const Container = styled.form`
   justify-content: center;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_900};
-  color: ${({ theme }) => theme.COLORS.LIGHT_400};
+  color: ${({ theme }) => theme.COLORS.LIGHT_500};
   border-radius: 8px;
 
   > input {
     display: flex;
+
+    font-family: "Roboto", sans-serif;
 
     height: 56px;
     min-width: 75%;

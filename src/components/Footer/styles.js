@@ -15,7 +15,7 @@ export const Container = styled.footer`
 
   width: 100%;
   min-width: 420px;
-  height: 4.8rem;
+  min-height: 4.8rem;
 
   padding: 0 1.74rem;
   margin-top: 1.5rem;
@@ -42,17 +42,17 @@ export const Container = styled.footer`
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     main {
-     
-      max-width: 70rem;
+      
+      width: 70rem;
     }
 
     font: 0.85rem;
 
-    > div {
-      > img {
+    div {
+      img {
         height: 1.87rem;
       }
-      > h2 {
+      h2 {
         font-size: 1.5rem;
       }
     }

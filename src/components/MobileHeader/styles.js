@@ -17,6 +17,10 @@ export const Container = styled.header`
   padding-right: 1.75rem;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+  > svg {
+    cursor: pointer;
+  }
   div:nth-last-child(2) {
     display: flex;
     align-items: center;
@@ -26,7 +30,7 @@ export const Container = styled.header`
       font-size: 0.75rem;
     }
   }
- h1 {
+  h1 {
     font-family: Roboto "sans-serif";
     font-size: 1.32rem;
     font-weight: 700;
