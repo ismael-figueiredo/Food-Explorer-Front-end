@@ -17,6 +17,16 @@ export const Main = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    > button {
+      margin-top: 3rem;
+      border-radius: 3.5px;
+      width: 100%;
+      height: 3rem;
+      border: none;
+
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    }
   }
 
   min-width: 19.75rem;
@@ -34,9 +44,23 @@ export const Main = styled.div`
     align-items: center;
     justify-content: space-between;
     section {
-      width: 43rem;
+      width: 45rem;
       align-items: start;
       padding-left: 3rem;
+      > button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8.2rem;
+
+        padding: 1.5rem;
+        margin-top: 3rem;
+        height: 3rem;
+
+        font-size: 0.875rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+      }
     }
     img {
       margin-top: 1rem;
@@ -69,7 +93,10 @@ export const DishTitle = styled.h2`
   font-family: "Poppins", sans-serif;
   font-size: 1.69rem;
   font-weight: 500;
+  line-height: 140%;
+  
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    font-size: 2.5rem;
   }
 `
 export const DishDescription = styled.p`
@@ -83,8 +110,9 @@ export const DishDescription = styled.p`
   line-height: 140%;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    max-width: 43rem;
+    min-width: 43rem;
     text-align: left;
+    font-size: 1.5rem;
   }
 `
 export const Ingredient = styled.span`
@@ -135,7 +163,7 @@ export const Controls = styled.div`
     font-family: "Roboto", sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    line-height: 160%; 
+    line-height: 160%;
   }
   button:nth-child(4) {
     display: flex;
@@ -179,5 +207,6 @@ export const Controls = styled.div`
       font-family: "Poppins", sans-serif;
       font-weight: 500;
     }
+    
   }
 `

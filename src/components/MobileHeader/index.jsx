@@ -3,18 +3,18 @@ import { LuMenu } from "react-icons/lu"
 import { MobileReceiptButton } from "../MobileReceiptButton"
 import Logo from "../../assets/logo.png"
 
-export function MobileHeader({ isadmin=true, ...rest }) {
+export function MobileHeader({ isAdmin=false, ...rest }) {
   return (
     <Container>
       <LuMenu size="2rem" />
       <div>
         <img src={Logo} alt="Logotipo food explorer" />
         <h1>food explorer</h1>
-        {!isadmin && <span>admin</span>}
+        {isAdmin && <span>admin</span>}
       </div>
-      {!isadmin && <div></div>}
+      {isAdmin && <div></div>}
 
-      {isadmin && <MobileReceiptButton rating={6} />}
+      {!isAdmin && <MobileReceiptButton rating={6} />}
     </Container>
   )
 }

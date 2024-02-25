@@ -15,11 +15,11 @@ import { Header } from "../../components/Header"
 import { MobileHeader } from "../../components/MobileHeader"
 import Dishimage from "../../assets/Mask group-1.png"
 
-export function Dishes() {
+export function Dishes({ isAdmin = true }) {
   const dish = {
     name: "Salada Ravanelo",
     description:
-      "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial..",
+      "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.",
     ingredients: [
       "alface",
       "pepino",
@@ -31,8 +31,8 @@ export function Dishes() {
   }
   return (
     <Container>
-      <MobileHeader />
-      <Header />
+      <MobileHeader isAdmin={isAdmin} />
+      <Header isAdmin={isAdmin} />
       <Main>
         <BackButton>
           <LuChevronLeft size="2rem" />
@@ -48,19 +48,23 @@ export function Dishes() {
                 <Ingredient key={ingredient}>{ingredient}</Ingredient>
               ))}
           </IngredientContent>
-          <Controls>
-            <button>
-              <LuMinus size="1.7rem" />
-            </button>
-            <span>01</span>
-            <button>
-              <LuPlus size="1.7rem" />
-            </button>
-            <button>
-              <PiReceiptBold size="1.5rem" /> Pedir • R$ 25,00
-            </button>
-            <button>incluir • R$ 25,00</button>
-          </Controls>
+
+          {!isAdmin && (
+            <Controls>
+              <button>
+                <LuMinus size="1.7rem" />
+              </button>
+              <span>01</span>
+              <button>
+                <LuPlus size="1.7rem" />
+              </button>
+              <button>
+                <PiReceiptBold size="1.5rem" /> Pedir • R$ 25,00
+              </button>
+              <button>incluir • R$ 25,00</button>
+            </Controls>
+          )}
+          {isAdmin && <button>Editar prato</button>}
         </section>
       </Main>
       <Footer />
