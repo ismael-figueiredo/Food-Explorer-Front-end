@@ -4,6 +4,7 @@ import { LuPlus, LuMinus } from "react-icons/lu"
 import { TiChevronRight } from "react-icons/ti"
 import { FaRegHeart, FaHeart } from "react-icons/fa"
 import { PiPencilSimple } from "react-icons/pi"
+import { useNavigate } from "react-router-dom"
 
 export function DishCard({
   name,
@@ -31,6 +32,8 @@ export function DishCard({
   const decreaseAmount = () =>
     setAmount((prevAmount) => Math.max(prevAmount - 1, 1))
 
+    const navigate = useNavigate()
+
   return (
     <Container>
       {!isAdmin && (
@@ -44,7 +47,7 @@ export function DishCard({
         </button>
       )}
       <img src={image} alt={`Imagem do prato ${name}`} />
-      <span className="DishName">
+      <span className="DishName" onClick={() => navigate("/dish")}>
         {name}
         <TiChevronRight />
       </span>

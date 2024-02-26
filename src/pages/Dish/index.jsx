@@ -14,8 +14,10 @@ import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
 import { MobileHeader } from "../../components/MobileHeader"
 import Dishimage from "../../assets/Mask group-1.png"
+import { useNavigate } from "react-router-dom"
 
-export function Dishes({ isAdmin = true }) {
+export function Dishe({ isAdmin = true }) {
+  const navigate = useNavigate()
   const dish = {
     name: "Salada Ravanelo",
     description:
@@ -34,7 +36,7 @@ export function Dishes({ isAdmin = true }) {
       <MobileHeader isAdmin={isAdmin} />
       <Header isAdmin={isAdmin} />
       <Main>
-        <BackButton>
+        <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft size="2rem" />
           voltar
         </BackButton>

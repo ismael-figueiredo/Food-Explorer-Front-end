@@ -63,7 +63,7 @@ export function Carousel({ Category, Dishes }) {
 
   return (
     <Container
-      isDragging={isDragging}
+      
       onMouseDown={onDragStart}
       onMouseLeave={onDragEnd}
       onMouseUp={onDragEnd}

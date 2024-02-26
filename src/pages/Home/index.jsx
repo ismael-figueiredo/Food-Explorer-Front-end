@@ -10,6 +10,7 @@ import MobileMacarons from "../../assets/macarons.png"
 import Macarons from "../../assets/macarons2.png"
 import { SidebarMenu } from "../../components/SidebarMenu"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const meals = [
   {
@@ -116,6 +117,7 @@ const drinks = [
 
 export function Home() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const navigate = useNavigate()
   return (
     <Container>
       <SidebarMenu
