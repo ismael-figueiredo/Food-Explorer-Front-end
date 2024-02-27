@@ -19,7 +19,7 @@ body{
   color: ${({ theme }) => theme.COLORS.LIGHT_100} ;
   -webkit-font-smoothing: antialiased;
 }
-body, input, textarea{
+body, input,select, textarea{
 font-family: "Roboto", sans-serif;
 font-size: 1rem;
 
