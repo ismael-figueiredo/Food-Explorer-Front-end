@@ -38,6 +38,7 @@ export const Container = styled.div`
   }
 
   .DishName {
+    cursor: pointer;
     display: flex;
     max-height: 2rem;
     align-items: center;

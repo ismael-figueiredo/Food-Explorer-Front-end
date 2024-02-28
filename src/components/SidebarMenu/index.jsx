@@ -2,13 +2,16 @@ import { Container } from "./styles"
 import { Footer } from "../Footer"
 import { IconInput } from "../IconInput"
 import { LuX, LuSearch } from "react-icons/lu"
+import { useNavigate } from "react-router-dom"
 
 export function SidebarMenu({
+  
   isAdmin = true,
   isAuthenticated = true,
   menuIsOpen = true,
   onCloseMenu,
 }) {
+  const navigate = useNavigate()
   return (
     <Container data-menu-is-open={menuIsOpen}>
       <header>
@@ -23,7 +26,7 @@ export function SidebarMenu({
           placeholder={"Busque por pratos ou ingredientes"}
         />
 
-        {isAuthenticated && isAdmin && <button>Editar prato</button>}
+        {isAuthenticated && isAdmin && <button onClick={() => navigate("/new")}>Novo prato</button>}
 
         {isAuthenticated && <button>Sair</button>}
 

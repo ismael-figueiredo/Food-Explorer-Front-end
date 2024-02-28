@@ -18,6 +18,7 @@ export const Container = styled.header`
 
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
   > div {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: end;

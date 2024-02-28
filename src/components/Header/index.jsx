@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { Container } from "./styles"
 import { IconInput } from "../IconInput"
 import { Button } from "../Button"
@@ -6,10 +7,11 @@ import { LuSearch, LuLogOut } from "react-icons/lu"
 import Logo from "../../assets/logo.png"
 
 export function Header({ isAdmin =false , ...rest }) {
+  const navigate = useNavigate()
   return (
     <Container>
       <div>
-        <div>
+        <div onClick={() => navigate("/")}>
           <img src={Logo} alt="Logotipo food explorer" />
           <h1>food explorer</h1>
         </div>
@@ -20,7 +22,7 @@ export function Header({ isAdmin =false , ...rest }) {
         placeholder="Busque por pratos ou ingredientes"
       />
 
-      {isAdmin && <Button title={"Novo Prato"}/>}
+      {isAdmin && <Button title={"Novo Prato"} onClick={()=>navigate("/new")}/>}
       {!isAdmin && <ReceiptButton rating={6} />}
       <button>
         <LuLogOut size="2rem" />

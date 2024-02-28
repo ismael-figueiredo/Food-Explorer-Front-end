@@ -13,6 +13,10 @@ export const Container = styled.button`
 
   &:disabled {
     background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
+    &:hover {
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
+      cursor: no-drop;
+    }
   }
   &:hover {
     background-color: ${({ theme }) => theme.COLORS.TOMATO_200};

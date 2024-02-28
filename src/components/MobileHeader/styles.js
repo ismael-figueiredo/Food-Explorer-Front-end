@@ -30,6 +30,9 @@ export const Container = styled.header`
       font-size: 0.75rem;
     }
   }
+  div{
+    cursor: pointer;
+  }
   h1 {
     font-family: Roboto "sans-serif";
     font-size: 1.32rem;

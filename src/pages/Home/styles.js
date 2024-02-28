@@ -3,7 +3,9 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
   min-width: 420px;
+ 
   > main {
+   
     &[data-menu-is-open="true"] {
       display: none;
     }

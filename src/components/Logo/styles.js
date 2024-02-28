@@ -1,13 +1,16 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  gap: .67rem;
+  gap: 0.67rem;
   h1 {
     font-size: 2.32rem;
+    cursor: pointer;
   }
 
   img {

@@ -1,5 +1,5 @@
 import { Container } from "./styles"
 
-export function Button({ title }) {
-  return <Container>{title}</Container>
+export function Button({ title, ...rest }) {
+  return <Container {...rest}>{title}</Container>
 }
