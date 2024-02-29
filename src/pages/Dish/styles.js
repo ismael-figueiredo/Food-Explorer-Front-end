@@ -38,13 +38,13 @@ export const Main = styled.div`
   }
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     flex-direction: row;
-    max-width: 70rem;
+    max-width: 69rem;
     width: 100%;
     height: 100%;
     align-items: center;
     justify-content: space-between;
-    section {
-      width: 45rem;
+    >section {
+      
       align-items: start;
       padding-left: 3rem;
       > button {
@@ -85,6 +85,10 @@ export const BackButton = styled.button`
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 140%;
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    display: flex;
+    position: absolute;
+  }
 `
 export const DishTitle = styled.h2`
   color: ${({ theme }) => theme.COLORS.LIGHT_300};

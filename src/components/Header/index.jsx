@@ -10,23 +10,27 @@ export function Header({ isAdmin =false , ...rest }) {
   const navigate = useNavigate()
   return (
     <Container>
-      <div>
-        <div onClick={() => navigate("/")}>
-          <img src={Logo} alt="Logotipo food explorer" />
-          <h1>food explorer</h1>
+      <div className="content">
+        <div>
+          <div onClick={() => navigate("/")}>
+            <img src={Logo} alt="Logotipo food explorer" />
+            <h1>food explorer</h1>
+          </div>
+          {isAdmin && <span>admin</span>}
         </div>
-        {isAdmin&&<span>admin</span>}
-      </div>
-      <IconInput
-        icon={LuSearch}
-        placeholder="Busque por pratos ou ingredientes"
-      />
+        <IconInput
+          icon={LuSearch}
+          placeholder="Busque por pratos ou ingredientes"
+        />
 
-      {isAdmin && <Button title={"Novo Prato"} onClick={()=>navigate("/new")}/>}
-      {!isAdmin && <ReceiptButton rating={6} />}
-      <button>
-        <LuLogOut size="2rem" />
-      </button>
+        {isAdmin && (
+          <Button title={"Novo Prato"} onClick={() => navigate("/new")} />
+        )}
+        {!isAdmin && <ReceiptButton rating={6} />}
+        <button>
+          <LuLogOut size="2rem" />
+        </button>
+      </div>
     </Container>
   )
 }

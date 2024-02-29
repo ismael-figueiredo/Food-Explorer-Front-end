@@ -2,6 +2,22 @@ import styled from "styled-components"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.footer`
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+width: 100%;
+min-width: 420px;
+height: 4.8rem;
+
+padding: 0 1.74rem;
+margin-top: 1.5rem;
+background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+color: ${({ theme }) => theme.COLORS.LIGHT_200};
+font-family: "Roboto", sans-serif;
+font-size: 0.75rem;
+font-weight: 400;
   main {
     margin: 0 auto;
     display: flex;
@@ -9,22 +25,6 @@ export const Container = styled.footer`
     justify-content: space-between;
     align-items: center;
   }
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-  min-width: 420px;
-  min-height: 4.8rem;
-
-  padding: 0 1.74rem;
-  margin-top: 1.5rem;
-  background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
-  color: ${({ theme }) => theme.COLORS.LIGHT_200};
-  font-family: "Roboto", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
 
   div {
     display: flex;
@@ -41,9 +41,10 @@ export const Container = styled.footer`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    min-width: 70rem;
     main {
-      
       width: 70rem;
+      
     }
 
     font: 0.85rem;

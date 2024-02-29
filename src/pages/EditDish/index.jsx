@@ -17,7 +17,7 @@ import { Button } from "../../components/Button"
 import { useNavigate } from "react-router-dom"
 import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
 
-export function NewDish() {
+export function EditDish() {
   const navigate = useNavigate()
   return (
     <Container>
@@ -28,7 +28,7 @@ export function NewDish() {
           <LuChevronLeft />
           Voltar
         </BackButton>
-        <h1>Novo Prato</h1>
+        <h1>Editar Prato</h1>
         <div className="line1">
           <section title="Adicionar imagem" className="img">
             <label>Imagem do prato</label>
@@ -79,8 +79,9 @@ export function NewDish() {
           </section>
         </div>
         <div className="line4">
-          <div />
-          <Button title={"Criar prato"} disabled />
+          <div/>
+          <Button title={"Exluir prato"} disabled />
+          <Button title={"Salvar alteraçoes"} disabled />
         </div>
       </Form>
 

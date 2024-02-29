@@ -58,6 +58,16 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.COLORS.LIGHT_400};
     }
   }
+  .line4 {
+    display: flex;
+    gap: 2rem;
+    > button:first-of-type {
+      background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    }
+    button:hover {
+      cursor: pointer;
+    }
+  }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     max-width: 70rem;
@@ -74,7 +84,7 @@ export const Form = styled.form`
     .line4 {
       display: grid;
       gap: 2rem;
-      grid-template-columns: 86fr 14fr;
+      grid-template-columns:75fr 11fr 14fr;
     }
     .Select {
       > svg {
@@ -129,7 +139,6 @@ export const Select = styled.select`
   border-radius: 0.5rem;
   padding: 0 1rem;
   font-size: 0.87rem;
-  
 `
 export const BackButton = styled.button`
   background: none;
@@ -151,7 +160,6 @@ export const BackButton = styled.button`
     height: 1.5rem;
   }
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    
   }
 `
 export const IngredientsContent = styled.div`

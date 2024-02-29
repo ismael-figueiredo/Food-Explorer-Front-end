@@ -6,64 +6,64 @@ export const Container = styled.header`
     display: none;
   }
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   width: 100%;
-  min-width: 74rem;
-  height: 6.5rem;
-
-  padding: 0 auto;
-  gap: 2rem;
-
+  min-width: 70rem;
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
-  > div {
-    cursor: pointer;
+  .content {
+    width: 70rem;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
 
-    div {
+    height: 6.5rem;
+    gap: 2rem;
+
+    > div {
+      cursor: pointer;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: end;
-      gap: 8px;
-      min-width: 16rem;
-      & h1 {
-        font-size: 1.5rem;
-        font-weight: 700;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 8px;
+        width:12.3rem;
+        & h1 {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+        > img {
+          height: 1.5rem;
+        }
       }
-      > img {
-        height: 1.5rem;
+      > span {
+        display: block;
+        text-align: end;
+        color: ${({ theme }) => theme.COLORS.CAKE_100};
+        line-height: 160%;
+        font-size: 0.75rem;
       }
     }
-    > span {
-      display: block;
-      text-align: end;
-      color: ${({ theme }) => theme.COLORS.CAKE_100};
-      line-height: 160%;
-      font-size: 0.75rem;
+
+    > button:nth-last-child(2) {
+      max-width: 13.5rem;
+      min-width: 10rem;
+      &:focus {
+        outline: none;
+      }
     }
-  }
 
-  > form {
-    max-width: 40rem;
-  }
-
-  > button:nth-last-child(2) {
-    max-width: 13.5rem;
-    min-width: 10rem;
-    &:focus {
-      outline: none;
+    > button:nth-last-child(1) {
+      background-color: transparent;
+      border: none;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 2rem;
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
-  }
-
-  > button:nth-last-child(1) {
-    background-color: transparent;
-    border: none;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 2rem;
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 `
