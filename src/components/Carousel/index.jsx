@@ -9,7 +9,7 @@ import {
 import { DishCard } from "../DishCard"
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
 
-export function Carousel({ Category, Dishes }) {
+export function Carousel({ Category, Dishes, isAdmin }) {
   const dishesRef = useRef(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
@@ -89,7 +89,7 @@ export function Carousel({ Category, Dishes }) {
             image={dish.image}
             price={dish.price}
             description={dish.description}
-            isAdmin={false}
+            isAdmin={isAdmin}
           />
         ))}
       </MainDishes>

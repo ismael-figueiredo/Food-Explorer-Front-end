@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-width: 420px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
  
   > main {
    
@@ -70,11 +70,13 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    align-items: center;
     > main {
+      width: 100%;
       max-width: 70rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
+     
 
       &[data-menu-is-open="true"] {
         display: flex;
@@ -83,8 +85,8 @@ export const Container = styled.div`
 
     .Banner {
       margin: 10.25rem 2rem 2rem 2rem;
-     
-      width: 68rem;
+      min-width: 70rem;
+      max-width: 70rem;
       justify-content: left;
       border-radius: 8px;
       > div {

@@ -17,12 +17,12 @@ import { Button } from "../../components/Button"
 import { useNavigate } from "react-router-dom"
 import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
 
-export function NewDish() {
+export function NewDish({isAdmin = true}) {
   const navigate = useNavigate()
   return (
     <Container>
-      <Header />
-      <MobileHeader />
+      <Header isAdmin={isAdmin} />
+      <MobileHeader isAdmin={isAdmin} />
       <Form>
         <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft />

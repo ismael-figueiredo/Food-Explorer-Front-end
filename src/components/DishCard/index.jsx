@@ -42,7 +42,7 @@ export function DishCard({
         </button>
       )}
       {isAdmin && (
-        <button className="FavDish">
+        <button className="FavDish" onClick={() => navigate("/edit")}>
           <PiPencilSimple size="1.5rem" />
         </button>
       )}

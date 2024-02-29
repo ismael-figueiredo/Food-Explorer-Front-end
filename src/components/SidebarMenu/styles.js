@@ -2,12 +2,14 @@ import styled from "styled-components"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
+  
   height: 100vh;
   min-width: 100%;
   position: absolute;
+  top: 0;
   z-index: 4;
   object-fit: cover;
-  overflow-y: visible;
+  overflow-y: auto;
 
   transform: translateX(0);
   transition: transform 0.3s ease-in-out;

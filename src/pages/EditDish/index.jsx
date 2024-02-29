@@ -17,12 +17,12 @@ import { Button } from "../../components/Button"
 import { useNavigate } from "react-router-dom"
 import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
 
-export function EditDish() {
+export function EditDish({ isAdmin = true }) {
   const navigate = useNavigate()
   return (
     <Container>
-      <Header />
-      <MobileHeader />
+      <Header isAdmin={isAdmin} />
+      <MobileHeader isAdmin={isAdmin} />
       <Form>
         <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft />
@@ -79,7 +79,7 @@ export function EditDish() {
           </section>
         </div>
         <div className="line4">
-          <div/>
+          <div />
           <Button title={"Exluir prato"} disabled />
           <Button title={"Salvar alteraçoes"} disabled />
         </div>

@@ -115,7 +115,7 @@ const drinks = [
   },
 ]
 
-export function Home() {
+export function Home({isAdmin=true}) {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const navigate = useNavigate()
   return (
@@ -123,9 +123,10 @@ export function Home() {
       <SidebarMenu
         menuIsOpen={menuIsOpen}
         onCloseMenu={() => setMenuIsOpen(false)}
+        isAdmin={isAdmin}
       />
-      <MobileHeader onOpenMenu={() => setMenuIsOpen(true)} />
-      <Header />
+      <MobileHeader onOpenMenu={() => setMenuIsOpen(true)} isAdmin={isAdmin} />
+      <Header isAdmin={isAdmin} />
 
       <main data-menu-is-open={menuIsOpen}>
         <section className="Banner">
@@ -147,11 +148,11 @@ export function Home() {
           </div>
         </section>
 
-        <Carousel Category="Refeições" Dishes={meals} />
+        <Carousel Category="Refeições" Dishes={meals} isAdmin={isAdmin} />
 
-        <Carousel Category="Sobremesas" Dishes={desserts} />
+        <Carousel Category="Sobremesas" Dishes={desserts} isAdmin={isAdmin} />
 
-        <Carousel Category="Bebidas" Dishes={drinks} />
+        <Carousel Category="Bebidas" Dishes={drinks} isAdmin={isAdmin} />
       </main>
 
       <Footer />
