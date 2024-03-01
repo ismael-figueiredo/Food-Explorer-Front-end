@@ -66,7 +66,7 @@ export function Dishe({ isAdmin = true }) {
               <button>incluir • R$ 25,00</button>
             </Controls>
           )}
-          {isAdmin && <button>Editar prato</button>}
+          {isAdmin && <button onClick={() => navigate("/edit")}>Editar prato</button>}
         </section>
       </Main>
       <Footer />

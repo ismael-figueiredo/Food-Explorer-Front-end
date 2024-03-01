@@ -39,7 +39,7 @@ export const Container = styled.div`
     text-align: center;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     &:focus {
-      outline: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
+      outline: none;
     }
   }
 

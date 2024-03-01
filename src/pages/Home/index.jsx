@@ -11,6 +11,7 @@ import Macarons from "../../assets/macarons2.png"
 import { SidebarMenu } from "../../components/SidebarMenu"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../../hooks/auth"
 
 const meals = [
   {
@@ -115,7 +116,8 @@ const drinks = [
   },
 ]
 
-export function Home({isAdmin=true}) {
+export function Home({ isAdmin = false }) {
+  const { user } = useAuth()
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const navigate = useNavigate()
   return (
