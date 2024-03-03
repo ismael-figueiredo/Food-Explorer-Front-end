@@ -5,6 +5,7 @@ export function Loader() {
   return (
     <Container>
       <img src={LoaderImg} alt="loader" />
+      <p>Carregando...</p>
     </Container>
   )
 }
