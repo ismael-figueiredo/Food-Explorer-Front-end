@@ -8,13 +8,17 @@ import {
 } from "./styles"
 import { DishCard } from "../DishCard"
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
+import { api } from "../../service/api"
+import { useAuth } from "../../hooks/auth"
 
-export function Carousel({ Category, Dishes, isAdmin }) {
+export function Carousel({ Category, Dishes }) {
   const dishesRef = useRef(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [startScrollLeft, setStartScrollLeft] = useState(0)
   const [velocity, setVelocity] = useState(0)
+
+  const { isAdmin } = useAuth()
 
   const onDragStart = (e) => {
     setIsDragging(true)
@@ -38,7 +42,7 @@ export function Carousel({ Category, Dishes, isAdmin }) {
 
   const applyInertia = () => {
     let inertiaVelocity = velocity
-    const deceleration = 0.95 
+    const deceleration = 0.95
     const inertia = () => {
       if (Math.abs(inertiaVelocity) > 0.5) {
         dishesRef.current.scrollLeft += inertiaVelocity
@@ -53,8 +57,8 @@ export function Carousel({ Category, Dishes, isAdmin }) {
   }
 
   const scroll = (direction) => {
-    setIsDragging(false) 
-    const scrollAmount = 332 
+    setIsDragging(false)
+    const scrollAmount = 332
     dishesRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
@@ -63,7 +67,6 @@ export function Carousel({ Category, Dishes, isAdmin }) {
 
   return (
     <Container
-      
       onMouseDown={onDragStart}
       onMouseLeave={onDragEnd}
       onMouseUp={onDragEnd}
@@ -86,7 +89,7 @@ export function Carousel({ Category, Dishes, isAdmin }) {
           <DishCard
             key={index}
             name={dish.name}
-            image={dish.image}
+            image={`${api.defaults.baseURL}/files/${dish.image}`}
             price={dish.price}
             description={dish.description}
             isAdmin={isAdmin}

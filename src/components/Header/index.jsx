@@ -7,9 +7,9 @@ import { LuSearch, LuLogOut } from "react-icons/lu"
 import { useAuth } from "../../hooks/auth"
 import Logo from "../../assets/logo.png"
 
-export function Header({ isAdmin = false, ...rest }) {
+export function Header({ onSearch, ...rest }) {
   const navigate = useNavigate()
-  const { signOut } = useAuth()
+  const { signOut, isAdmin } = useAuth()
   return (
     <Container>
       <div className="content">
@@ -23,6 +23,7 @@ export function Header({ isAdmin = false, ...rest }) {
         <IconInput
           icon={LuSearch}
           placeholder="Busque por pratos ou ingredientes"
+          onChange={(e) => onSearch(e.target.value)}
         />
 
         {isAdmin && (
