@@ -63,6 +63,7 @@ export function NewDish({ isAdmin = true }) {
         },
       })
       alert("Prato criado com sucesso")
+      navigate("/")
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
@@ -146,6 +147,7 @@ export function NewDish({ isAdmin = true }) {
                 placeholder="00,00"
                 type="number"
                 min="0"
+                step="0.01"
                 onChange={(e) => setPrice(e.target.value)}
               />
             </PriceInput>

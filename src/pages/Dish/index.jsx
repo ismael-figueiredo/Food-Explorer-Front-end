@@ -1,3 +1,12 @@
+import { useState, useEffect } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { useAuth } from "../../hooks/auth"
+import { api } from "../../service/api"
+import { MobileHeader } from "../../components/MobileHeader"
+import { Footer } from "../../components/Footer"
+import { Header } from "../../components/Header"
+import { PiReceiptBold } from "react-icons/pi"
+import { LuPlus, LuMinus, LuChevronLeft } from "react-icons/lu"
 import {
   Container,
   BackButton,
@@ -8,22 +17,16 @@ import {
   IngredientContent,
   Controls,
 } from "./styles"
-import { PiReceiptBold } from "react-icons/pi"
-import { LuPlus, LuMinus, LuChevronLeft } from "react-icons/lu"
-import { Footer } from "../../components/Footer"
-import { Header } from "../../components/Header"
-import { MobileHeader } from "../../components/MobileHeader"
-import Dishimage from "../../assets/Mask group-1.png"
-import { useNavigate, useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
-import { api } from "../../service/api"
-import { useAuth } from "../../hooks/auth"
 
 export function Dish() {
   const [data, setData] = useState({})
-  const navigate = useNavigate()
-  const parms = useParams()
+
   const { isAdmin } = useAuth()
+
+  const navigate = useNavigate()
+
+  const parms = useParams()
+
   useEffect(() => {
     async function fechDish() {
       const response = await api.get(`/dish/${parms.id}`)
@@ -74,7 +77,7 @@ export function Dish() {
           )}
 
           {isAdmin && (
-            <button onClick={() => navigate("/edit")}>Editar prato</button>
+            <button onClick={() => navigate(`/edit/${data.id}`)}>Editar prato</button>
           )}
         </section>
       </Main>

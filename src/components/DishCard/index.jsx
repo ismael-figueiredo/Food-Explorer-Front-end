@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Container } from "./styles" 
+import { Container } from "./styles"
 import { LuPlus, LuMinus } from "react-icons/lu"
 import { TiChevronRight } from "react-icons/ti"
 import { FaRegHeart, FaHeart } from "react-icons/fa"
@@ -33,7 +33,7 @@ export function DishCard({
   const decreaseAmount = () =>
     setAmount((prevAmount) => Math.max(prevAmount - 1, 1))
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
   return (
     <Container>
@@ -43,7 +43,7 @@ export function DishCard({
         </button>
       )}
       {isAdmin && (
-        <button className="FavDish" onClick={() => navigate("/edit")}>
+        <button className="FavDish" onClick={() => navigate(`/edit/${id}`)}>
           <PiPencilSimple size="1.5rem" />
         </button>
       )}
