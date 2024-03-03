@@ -38,7 +38,7 @@ export function Home() {
         }
       }
       fetchDishes()
-    }, 100) 
+    }, 500) 
     return () => clearTimeout(timer)
   }, [search]) 
   return (

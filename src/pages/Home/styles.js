@@ -6,7 +6,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  &::-webkit-scrollbar {
+    display: none;
+  }
   > main {
     &[data-menu-is-open="true"] {
       display: none;
@@ -23,7 +25,7 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     font-family: "Poppins", sans-serif;
 
-    animation: slideIn 0.8s ease-in-out ;
+    animation: slideIn 0.8s ease-in-out;
 
     > div {
       display: flex;
