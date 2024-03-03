@@ -11,13 +11,13 @@ export function AuthProvider({ children }) {
       const response = await api.post("/session", { email, password })
       const { user, token } = response.data
 
-      const isAdmin = user.role === "admin" // Check if the user is an admin
+      const isAdmin = user.role === "admin" 
 
       localStorage.setItem("@FoodExplorer:user", JSON.stringify(user))
       localStorage.setItem("@FoodExplorer:token", token)
 
       api.defaults.headers.authorization = `Bearer ${token}`
-      setData({ user, token, isAdmin }) // Include isAdmin in the state
+      setData({ user, token, isAdmin }) 
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)

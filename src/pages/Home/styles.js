@@ -6,9 +6,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+
   > main {
-   
     &[data-menu-is-open="true"] {
       display: none;
     }
@@ -23,6 +22,9 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLORS.GRADIENTS_200};
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     font-family: "Poppins", sans-serif;
+
+    animation: slideIn 0.8s ease-in-out ;
+
     > div {
       display: flex;
       flex-direction: column;
@@ -68,6 +70,20 @@ export const Container = styled.div`
   .Macarons {
     display: none;
   }
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    60% {
+      transform: translateX(0);
+    }
+    80% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     align-items: center;
@@ -76,7 +92,6 @@ export const Container = styled.div`
       max-width: 70rem;
       display: flex;
       flex-direction: column;
-     
 
       &[data-menu-is-open="true"] {
         display: flex;

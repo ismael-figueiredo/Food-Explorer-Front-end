@@ -68,6 +68,13 @@ export const Form = styled.form`
       cursor: pointer;
     }
   }
+  button {
+    &:disabled {
+      &:hover {
+        cursor: no-drop;
+      }
+    }
+  }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     max-width: 70rem;
@@ -84,7 +91,7 @@ export const Form = styled.form`
     .line4 {
       display: grid;
       gap: 2rem;
-      grid-template-columns:75fr 11fr 14fr;
+      grid-template-columns: 75fr 11fr 14fr;
     }
     .Select {
       > svg {

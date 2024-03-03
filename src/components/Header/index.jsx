@@ -5,11 +5,15 @@ import { Button } from "../Button"
 import { ReceiptButton } from "../ReceiptButton"
 import { LuSearch, LuLogOut } from "react-icons/lu"
 import { useAuth } from "../../hooks/auth"
+import { useOrders } from "../../hooks/orders"
 import Logo from "../../assets/logo.png"
 
 export function Header({ onSearch, ...rest }) {
   const navigate = useNavigate()
   const { signOut, isAdmin } = useAuth()
+
+  const { orders } = useOrders()
+
   return (
     <Container>
       <div className="content">
@@ -25,11 +29,11 @@ export function Header({ onSearch, ...rest }) {
           placeholder="Busque por pratos ou ingredientes"
           onChange={(e) => onSearch(e.target.value)}
         />
-
         {isAdmin && (
           <Button title={"Novo Prato"} onClick={() => navigate("/new")} />
         )}
-        {!isAdmin && <ReceiptButton rating={6} />}
+        {!isAdmin && <ReceiptButton rating={orders.length} />}
+
         <button onClick={signOut}>
           <LuLogOut size="2rem" />
         </button>

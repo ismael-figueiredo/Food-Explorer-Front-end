@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import { useAuth } from "../../hooks/auth"
+import { useOrders } from "../../hooks/orders"
 import { Container } from "./styles"
 import { LuPlus, LuMinus } from "react-icons/lu"
 import { TiChevronRight } from "react-icons/ti"
@@ -12,15 +14,29 @@ export function DishCard({
   image,
   price,
   description,
-  isAdmin = false,
   initialAmount = 1,
   isFavorite = false,
 }) {
   const [fav, setFav] = useState(isFavorite)
   const [amount, setAmount] = useState(initialAmount)
+  const {isAdmin} = useAuth()
   const [totalPrice, setTotalPrice] = useState(
     parseFloat(price.replace(",", ".")) * initialAmount
   )
+
+  const { addOrder } = useOrders() // Use o hook para acessar a função addOrder
+
+  const includeInOrder = () => {
+    const orderDetails = {
+      id,
+      name,
+      amount,
+      price: totalPrice, // Preço total com base na quantidade
+    }
+
+    addOrder(orderDetails) // Adicione o prato ao pedido
+  }
+
 
   useEffect(() => {
     setTotalPrice((parseFloat(price.replace(",", ".")) * amount).toFixed(2))
@@ -69,7 +85,7 @@ export function DishCard({
             </button>
           </div>
         )}
-        {!isAdmin && <button>Incluir</button>}
+        {!isAdmin && <button onClick={includeInOrder}>Incluir</button>}
       </div>
     </Container>
   )

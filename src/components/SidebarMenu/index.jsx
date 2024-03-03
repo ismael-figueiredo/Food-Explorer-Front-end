@@ -23,7 +23,7 @@ export function SidebarMenu({
       <main>
         <IconInput
           icon={LuSearch}
-          placeholder={"Busque por pratos ou ingredientes"}
+          placeholder="Busque por pratos ou ingredientes"
           onChange={(e) => onSearch(e.target.value)}
         />
 
