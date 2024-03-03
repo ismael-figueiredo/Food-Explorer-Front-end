@@ -91,6 +91,7 @@ export function Carousel({ Category, Dishes }) {
             name={dish.name}
             image={`${api.defaults.baseURL}/files/${dish.image}`}
             price={dish.price}
+            id={dish.id}
             description={dish.description}
             isAdmin={isAdmin}
           />

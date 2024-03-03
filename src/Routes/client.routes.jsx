@@ -1,14 +1,13 @@
 import { Routes, Route } from "react-router-dom"
 
 import { Home } from "../pages/Home"
-import { Dishe } from "../pages/Dish"
-import { NewDish } from "../pages/NewDish"
-import { EditDish } from "../pages/EditDish"
+import { Dish } from "../pages/Dish"
+
 export function ClientRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/dish:id" element={<Dishe />} />
+      <Route path="/dish/:id" element={<Dish />} />
      
     </Routes>
   )

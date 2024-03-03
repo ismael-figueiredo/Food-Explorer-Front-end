@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 export function DishCard({
   name,
+  id,
   image,
   price,
   description,
@@ -47,7 +48,7 @@ export function DishCard({
         </button>
       )}
       <img src={image} alt={`Imagem do prato ${name}`} />
-      <span className="DishName" onClick={() => navigate("/dish")}>
+      <span className="DishName" onClick={() => navigate(`/dish/${id}`)}>
         {name}
         <TiChevronRight />
       </span>
