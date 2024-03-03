@@ -116,8 +116,8 @@ const drinks = [
   },
 ]
 
-export function Home({ isAdmin = false }) {
-  const { user } = useAuth()
+export function Home() {
+  const { user, isAdmin } = useAuth()
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const navigate = useNavigate()
   return (
