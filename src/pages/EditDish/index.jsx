@@ -110,8 +110,7 @@ export function EditDish() {
 
   return (
     <Container>
-      <Header />
-      <MobileHeader />
+     
       <Form onSubmit={handleSubmit}>
         <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft />
@@ -212,7 +211,7 @@ export function EditDish() {
         </div>
       </Form>
 
-      <Footer />
+    
     </Container>
   )
 }

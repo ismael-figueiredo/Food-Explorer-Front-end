@@ -1,3 +1,10 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { api } from "../../service/api"
+import { IngredientItem } from "../../components/IngredientItem"
+import { Input } from "../../components/Input"
+import { Button } from "../../components/Button"
+import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
 import {
   BackButton,
   Container,
@@ -8,18 +15,8 @@ import {
   PriceInput,
   DescriptionArea,
 } from "./styles"
-import { MobileHeader } from "../../components/MobileHeader"
-import { IngredientItem } from "../../components/IngredientItem"
-import { Header } from "../../components/Header"
-import { Footer } from "../../components/Footer"
-import { Input } from "../../components/Input"
-import { Button } from "../../components/Button"
-import { useNavigate } from "react-router-dom"
-import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
-import { useState } from "react"
-import { api } from "../../service/api"
 
-export function NewDish({ isAdmin = true }) {
+export function NewDish() {
   const navigate = useNavigate()
 
   const [newIngredient, setNewIngredient] = useState("")
@@ -75,8 +72,6 @@ export function NewDish({ isAdmin = true }) {
 
   return (
     <Container>
-      <Header isAdmin={isAdmin} />
-      <MobileHeader isAdmin={isAdmin} />
       <Form onSubmit={handleSubmit}>
         <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft />
@@ -171,8 +166,6 @@ export function NewDish({ isAdmin = true }) {
           />
         </div>
       </Form>
-
-      <Footer />
     </Container>
   )
 }

@@ -6,7 +6,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   min-width: 448px;
-  height: 100vh;
 `
 export const Main = styled.div`
   display: flex;
@@ -39,15 +38,14 @@ export const Main = styled.div`
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     flex-direction: row;
     max-width: 69rem;
-    width: 100%;
-    height: 100%;
     align-items: center;
-    justify-content: space-between;
-    >section {
-      
+    width: 100%;
+    margin-top: 6rem;
+    > section {
       align-items: start;
       padding-left: 3rem;
       > button {
+        
         display: flex;
         justify-content: center;
         align-items: center;
@@ -88,6 +86,7 @@ export const BackButton = styled.button`
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     display: flex;
     position: absolute;
+    margin-top: -5rem;
   }
 `
 export const DishTitle = styled.h2`

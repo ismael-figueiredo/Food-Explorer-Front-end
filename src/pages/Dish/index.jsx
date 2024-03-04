@@ -2,9 +2,6 @@ import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useAuth } from "../../hooks/auth"
 import { api } from "../../service/api"
-import { MobileHeader } from "../../components/MobileHeader"
-import { Footer } from "../../components/Footer"
-import { Header } from "../../components/Header"
 import { PiReceiptBold } from "react-icons/pi"
 import { LuPlus, LuMinus, LuChevronLeft } from "react-icons/lu"
 import {
@@ -38,8 +35,6 @@ export function Dish() {
 
   return (
     <Container>
-      <MobileHeader />
-      <Header />
       <Main>
         <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft size="2rem" />
@@ -81,7 +76,6 @@ export function Dish() {
           )}
         </section>
       </Main>
-      <Footer />
     </Container>
   )
 }

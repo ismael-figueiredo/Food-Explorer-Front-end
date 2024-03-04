@@ -3,9 +3,11 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
   min-width: 420px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -88,6 +90,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    overflow: hidden;
     align-items: center;
     > main {
       width: 100%;

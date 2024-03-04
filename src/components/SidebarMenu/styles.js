@@ -4,9 +4,10 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 export const Container = styled.div`
   
   height: 100vh;
-  min-width: 100%;
-  position: absolute;
+  width: 100%;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 4;
   object-fit: cover;
   overflow-y: auto;

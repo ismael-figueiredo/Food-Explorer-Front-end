@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/auth"
 
 export function SidebarMenu({
-  menuIsOpen = true,
+  menuIsOpen = false,
   onCloseMenu,
   onSearch,
 }) {
