@@ -1,15 +1,15 @@
+import { useSearch } from "../../hooks/search"
 import { useState } from "react"
 import { useAuth } from "../../hooks/auth"
 import { Outlet } from "react-router-dom"
+import { MobileHeader } from "../../components/MobileHeader"
+import { SidebarMenu } from "../../components/SidebarMenu"
 import { Container } from "./styled"
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
-import { MobileHeader } from "../../components/MobileHeader"
-import { SidebarMenu } from "../../components/SidebarMenu"
-import { useSearch } from "../../hooks/search"
 
 export function DefaultLayout() {
-  const { user, isAdmin } = useAuth()
+  const { isAdmin } = useAuth()
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const { setSearch } = useSearch()
   return (

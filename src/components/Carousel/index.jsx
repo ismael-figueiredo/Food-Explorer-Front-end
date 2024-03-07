@@ -1,4 +1,7 @@
-import React, { useRef, useState } from "react"
+import { useRef, useState } from "react"
+import { api } from "../../service/api"
+import { DishCard } from "../DishCard"
+import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
 import {
   Container,
   CarouselControls,
@@ -6,10 +9,6 @@ import {
   CategoryTitle,
   MainDishes,
 } from "./styles"
-import { DishCard } from "../DishCard"
-import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
-import { api } from "../../service/api"
-import { useAuth } from "../../hooks/auth"
 
 export function Carousel({ Category, Dishes }) {
   const dishesRef = useRef(null)
@@ -17,8 +16,6 @@ export function Carousel({ Category, Dishes }) {
   const [startX, setStartX] = useState(0)
   const [startScrollLeft, setStartScrollLeft] = useState(0)
   const [velocity, setVelocity] = useState(0)
-
-  const { isAdmin } = useAuth()
 
   const onDragStart = (e) => {
     setIsDragging(true)
@@ -93,7 +90,6 @@ export function Carousel({ Category, Dishes }) {
             price={dish.price}
             id={dish.id}
             description={dish.description}
-            isAdmin={isAdmin}
           />
         ))}
       </MainDishes>

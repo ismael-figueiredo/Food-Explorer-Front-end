@@ -2,12 +2,14 @@ import { Container } from "./styles"
 import { LuMenu } from "react-icons/lu"
 import { MobileReceiptButton } from "../MobileReceiptButton"
 import { useNavigate } from "react-router-dom"
+import { useOrders } from "../../hooks/orders"
 
 import Logo from "../../assets/logo.png"
 
 export function MobileHeader({ isAdmin = false, onOpenMenu, ...rest }) {
   const navigate = useNavigate()
- 
+  const { orders } = useOrders()
+  console.log(orders)
   return (
     <Container>
       <LuMenu size="2rem" onClick={onOpenMenu} />
@@ -18,7 +20,12 @@ export function MobileHeader({ isAdmin = false, onOpenMenu, ...rest }) {
       </div>
       {isAdmin && <div></div>}
 
-      {!isAdmin && <MobileReceiptButton rating={6} />}
+      {!isAdmin && (
+        <MobileReceiptButton
+          rating={orders.length}
+          onClick={() => navigate("/orders")}
+        />
+      )}
     </Container>
   )
 }

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
-import { useAuth } from "../../hooks/auth"
+import { useNavigate } from "react-router-dom"
 import { useOrders } from "../../hooks/orders"
+import { useAuth } from "../../hooks/auth"
 import { Container } from "./styles"
 import { LuPlus, LuMinus } from "react-icons/lu"
 import { TiChevronRight } from "react-icons/ti"
 import { FaRegHeart, FaHeart } from "react-icons/fa"
 import { PiPencilSimple } from "react-icons/pi"
-import { useNavigate } from "react-router-dom"
 
 export function DishCard({
   name,
@@ -24,17 +24,17 @@ export function DishCard({
     parseFloat(price.replace(",", ".")) * initialAmount
   )
 
-  const { addOrder } = useOrders() // Use o hook para acessar a função addOrder
+  const { addOrder } = useOrders() 
 
   const includeInOrder = () => {
     const orderDetails = {
       id,
       name,
       amount,
-      price: totalPrice, // Preço total com base na quantidade
+      price: totalPrice, 
     }
 
-    addOrder(orderDetails) // Adicione o prato ao pedido
+    addOrder(orderDetails) 
   }
 
 

@@ -12,8 +12,6 @@ export function Routes() {
     switch (user.role) {
       case ROLE.ADMIN:
         return <AdminRoutes />
-      case ROLE.CLIENT:
-        return <ClientRoutes />
       default:
         return <ClientRoutes />
     }

@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom"
+import { useOrders } from "../../hooks/orders"
+import { useAuth } from "../../hooks/auth"
 import { Container } from "./styles"
 import { IconInput } from "../IconInput"
 import { Button } from "../Button"
 import { ReceiptButton } from "../ReceiptButton"
 import { LuSearch, LuLogOut } from "react-icons/lu"
-import { useAuth } from "../../hooks/auth"
-import { useOrders } from "../../hooks/orders"
 import Logo from "../../assets/logo.png"
 
-export function Header({ onSearch, ...rest }) {
+export function Header({ onSearch, isAdmin = false }) {
   const navigate = useNavigate()
-  const { signOut, isAdmin } = useAuth()
+  const { signOut } = useAuth()
 
   const { orders } = useOrders()
 
@@ -32,7 +32,12 @@ export function Header({ onSearch, ...rest }) {
         {isAdmin && (
           <Button title={"Novo Prato"} onClick={() => navigate("/new")} />
         )}
-        {!isAdmin && <ReceiptButton rating={orders.length} />}
+        {!isAdmin && (
+          <ReceiptButton
+            rating={orders.length}
+            onClick={() => navigate("/orders")}
+          />
+        )}
 
         <button onClick={signOut}>
           <LuLogOut size="2rem" />

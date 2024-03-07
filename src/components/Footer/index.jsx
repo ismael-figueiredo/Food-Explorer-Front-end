@@ -10,7 +10,7 @@ export function Footer() {
           <img src={DisabledLogo} />
           <h2>food Explorer</h2>
         </div>
-        <span>© 2024 - By @Ismael_Figueiredo.</span>
+        <span>© 2024 - Ismael Figueiredo</span>
       </main>
     </Container>
   )

@@ -6,11 +6,9 @@ export function IconInput({ icon: Icon, ...rest }) {
   }
 
   return (
-    
-      <Container onSubmit={handleSubmit}>
-        {Icon && <Icon size="1.5rem" />}
-        <input {...rest} />
-      </Container>
-   
+    <Container onSubmit={handleSubmit}>
+      {Icon && <Icon size="1.5rem" />}
+      <input {...rest} />
+    </Container>
   )
 }
