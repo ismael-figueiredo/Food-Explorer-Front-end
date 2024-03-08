@@ -9,6 +9,11 @@ O front-end do Food Explorer é uma interface de usuário dinâmica e responsiva
 - Autorização, usuário `Admin` e `Client`, onde o `Admin` pode criar e editar pratos e o `Client` realizar pedidos.
 - Capacidade de expansão, criação de novas funcionalidades de acordo com cada demanda.
 
+
+https://github.com/ismael-figueiredo/Food-Explorer-Front-end/assets/149712941/48c9cd00-ba6e-4df7-91a2-503784e044a8
+
+
+
 ## Demonstração Online
 
 Você pode acessar a demonstração online do front-end do Food Explorer através do seguinte link: [link-para-demostracao-front-end](https://github.com/ismael-figueiredo/Food-Explorer-Back-end). Esta demonstração permite explorar a interface de usuário e interagir com a API FoodExplorer em um ambiente de produção.
