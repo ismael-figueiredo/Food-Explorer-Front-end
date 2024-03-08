@@ -31,7 +31,7 @@ export function Signup() {
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.message)
-        }else{
+        } else {
           alert("Não foi possivel cadastrar")
         }
       })
@@ -68,7 +68,7 @@ export function Signup() {
             placeholder="No mínimo 6 caracteres"
             onChange={(e) => setPasswoerd(e.target.value)}
           />
-          <Button title="Entrar" onClick={handleSignup} />
+          <Button title="Criar conta" onClick={handleSignup} />
           <a href="/">Já tenho uma conta</a>
         </form>
       </section>
