@@ -44,4 +44,41 @@ Esta estrutura facilita a manutenção, expansão e reusabilidade do código, pr
 Assim como a API FoodExplorer, o front-end deste projeto ultrapassa o âmbito acadêmico, demonstrando potencial de mercado com uma interface de usuário atrativa e funcionalidades robustas. Com ajustes mínimos, está pronto para ser implementado em restaurantes ou outros estabelecimentos alimentícios que desejam oferecer uma experiência digital enriquecedora para seus clientes.
 
 
-[def]: github/preview.mp
+## Como Rodar o Projeto
+
+Para executar este projeto localmente em sua máquina, siga os passos abaixo. Certifique-se de ter o [Node.js](https://nodejs.org/) instalado, pois ele é necessário para rodar o Vite e outros pacotes do projeto.
+
+### Clonando o Projeto
+
+Primeiro, clone o repositório do projeto para a sua máquina local usando o Git:
+
+`bash
+git clone https://github.com/ismael-figueiredo/Food-Explorer-Front-end.git
+cd Food-Explorer-Front-end` 
+
+### Instalando Dependências
+
+Com o repositório clonado, navegue até a pasta do projeto e instale as dependências necessárias usando o npm (ou yarn, se preferir):
+
+`npm install` ou, se você preferir usar yarn `yarn install` 
+
+### Executando o Projeto
+
+Após a instalação das dependências, você pode iniciar o servidor de desenvolvimento do Vite:
+
+`npm run dev`  ou, se você estiver usando yarn `yarn dev` 
+
+Esse comando iniciará o servidor de desenvolvimento e normalmente abrirá o projeto no seu navegador padrão. Se o navegador não abrir automaticamente, você pode acessar manualmente digitando `http://localhost:3000` na barra de endereços do seu navegador, ou a porta especificada no console se for diferente.
+
+### Visualizando o Projeto
+
+Com o servidor de desenvolvimento em execução, você agora pode visualizar e interagir com o front-end do Food Explorer diretamente no seu navegador.
+
+### Construindo para Produção
+
+Se você desejar construir o projeto para produção, execute o seguinte comando:
+
+`npm run build` ou, usando yarn `yarn build` 
+
+Isso gerará uma versão otimizada do seu projeto na pasta `dist`, pronta para ser deployada em qualquer servidor de hospedagem estática de sua escolha.
+
