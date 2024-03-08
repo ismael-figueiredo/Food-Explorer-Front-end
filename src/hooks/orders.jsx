@@ -3,14 +3,10 @@ import { createContext, useContext, useState, useEffect } from "react"
 export const OrdersContext = createContext({})
 
 export function OrdersProvider({ children }) {
-  const [orders, setOrders] = useState([])
-
-  useEffect(() => {
+  const [orders, setOrders] = useState(() => {
     const storedOrders = localStorage.getItem("@FoodExplorer:orders")
-    if (storedOrders) {
-      setOrders(JSON.parse(storedOrders))
-    }
-  }, [])
+    return storedOrders ? JSON.parse(storedOrders) : []
+  })
 
   useEffect(() => {
     localStorage.setItem("@FoodExplorer:orders", JSON.stringify(orders))
@@ -38,6 +34,7 @@ export function OrdersProvider({ children }) {
     </OrdersContext.Provider>
   )
 }
+
 export function useOrders() {
   const context = useContext(OrdersContext)
 

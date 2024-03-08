@@ -19,24 +19,25 @@ export function DishCard({
 }) {
   const [fav, setFav] = useState(isFavorite)
   const [amount, setAmount] = useState(initialAmount)
-  const {isAdmin} = useAuth()
+  const { isAdmin } = useAuth()
   const [totalPrice, setTotalPrice] = useState(
     parseFloat(price.replace(",", ".")) * initialAmount
   )
 
-  const { addOrder } = useOrders() 
+  const { addOrder } = useOrders()
 
   const includeInOrder = () => {
     const orderDetails = {
       id,
       name,
       amount,
-      price: totalPrice, 
+      price,
+      image,
+      description,
     }
 
-    addOrder(orderDetails) 
+    addOrder(orderDetails)
   }
-
 
   useEffect(() => {
     setTotalPrice((parseFloat(price.replace(",", ".")) * amount).toFixed(2))

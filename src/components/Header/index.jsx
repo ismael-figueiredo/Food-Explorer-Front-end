@@ -13,6 +13,10 @@ export function Header({ onSearch, isAdmin = false }) {
   const { signOut } = useAuth()
 
   const { orders } = useOrders()
+  function handleSignOut() {
+    navigate("/")
+    signOut()
+  }
 
   return (
     <Container>
@@ -39,7 +43,7 @@ export function Header({ onSearch, isAdmin = false }) {
           />
         )}
 
-        <button onClick={signOut}>
+        <button onClick={handleSignOut}>
           <LuLogOut size="2rem" />
         </button>
       </div>

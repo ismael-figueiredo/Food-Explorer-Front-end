@@ -4,6 +4,7 @@ import { Dish } from "../pages/Dish"
 import { NewDish } from "../pages/NewDish"
 import { EditDish } from "../pages/EditDish"
 import { DefaultLayout } from "../Layouts/DefaultLayout"
+import { ErrorPage } from "../pages/ErrorPage"
 
 export function AdminRoutes() {
   return (
@@ -13,6 +14,7 @@ export function AdminRoutes() {
         <Route path="/dish/:id" element={<Dish />} />
         <Route path="/new" element={<NewDish />} />
         <Route path="/edit/:id" element={<EditDish />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
   )

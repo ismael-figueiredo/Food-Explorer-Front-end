@@ -9,7 +9,8 @@ import Logo from "../../assets/logo.png"
 export function MobileHeader({ isAdmin = false, onOpenMenu, ...rest }) {
   const navigate = useNavigate()
   const { orders } = useOrders()
-  console.log(orders)
+  
+ 
   return (
     <Container>
       <LuMenu size="2rem" onClick={onOpenMenu} />
