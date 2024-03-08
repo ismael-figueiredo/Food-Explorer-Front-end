@@ -16,7 +16,7 @@ https://github.com/ismael-figueiredo/Food-Explorer-Front-end/assets/149712941/48
 
 ## Demonstração Online
 
-Você pode acessar a demonstração online do front-end do Food Explorer através do seguinte link: [link-para-demostracao-front-end](https://github.com/ismael-figueiredo/Food-Explorer-Back-end). Esta demonstração permite explorar a interface de usuário e interagir com a API FoodExplorer em um ambiente de produção.
+Você pode acessar a demonstração online do front-end do Food Explorer através do seguinte link: [FoodExplorer Online](https://food-explorer-if.netlify.app/). Esta demonstração permite explorar a interface de usuário e interagir com a API FoodExplorer em um ambiente de produção.
 
 `[Inserir aqui um vídeo demonstrativo do projeto]`
 
