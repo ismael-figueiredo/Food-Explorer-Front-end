@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
   width: 100%;
@@ -18,7 +19,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 1.8rem;
-    
+
     > h3 {
       font-family: "Poppins", sans-serif;
       font-size: 1.25rem;
@@ -26,9 +27,12 @@ export const Container = styled.div`
       font-weight: 500;
       line-height: 160%;
     }
-    button{
+    button {
       max-width: 13.5rem;
     }
+  }
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    max-width: 74rem;
   }
 `
 export const OrderContainer = styled.div`
@@ -65,8 +69,7 @@ export const OrderContainer = styled.div`
     max-width: 100%;
     max-height: 100%;
   }
-  a{
-    
+  a {
   }
   button {
     background-color: transparent;
@@ -75,7 +78,8 @@ export const OrderContainer = styled.div`
   }
   p {
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
-    font-size: .87rem;
+    font-size: 0.87rem;
     display: none;
   }
+  
 `

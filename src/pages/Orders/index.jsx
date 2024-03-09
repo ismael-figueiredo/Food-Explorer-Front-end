@@ -37,7 +37,14 @@ export function Orders() {
           <div>
             <h3>Total: R$ {totalOrderPrice}</h3>
 
-            <Button title={"Avançar"} />
+            <Button
+              title={"Avançar"}
+              onClick={() =>
+                alert(
+                  `Aplicação em versão demo! Para mais detalhes entre em contato (48) 9880-20536.`
+                )
+              }
+            />
           </div>
         </>
       ) : (

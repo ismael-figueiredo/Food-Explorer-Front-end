@@ -8,7 +8,7 @@ export const Container = styled.div`
   gap: 1rem;
   width: 100%;
   height: 100%;
-  min-height: 40vh;
+  flex: 1;
   img {
     width: 5rem;
     height: 5rem;
