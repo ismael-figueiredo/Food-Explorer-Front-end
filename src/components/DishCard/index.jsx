@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useOrders } from "../../hooks/orders"
 import { useAuth } from "../../hooks/auth"
+import { useAlert } from "../../hooks/alert"
 import { Container } from "./styles"
 import { LuPlus, LuMinus } from "react-icons/lu"
 import { TiChevronRight } from "react-icons/ti"
@@ -25,6 +26,7 @@ export function DishCard({
   )
 
   const { addOrder } = useOrders()
+  const { showAlert } = useAlert()
 
   const includeInOrder = () => {
     const orderDetails = {
@@ -37,6 +39,7 @@ export function DishCard({
     }
  
     addOrder(orderDetails)
+    showAlert("Adicionado com sucesso!", "success")
   }
 
   useEffect(() => {

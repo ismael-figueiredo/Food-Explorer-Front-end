@@ -6,12 +6,14 @@ import { Loader } from "../../components/Loader"
 import { useSearch } from "../../hooks/search"
 import MobileMacarons from "../../assets/macarons.png"
 import Macarons from "../../assets/macarons2.png"
+import { useAlert } from "../../hooks/alert"
 
 export function Home() {
   
   const { search } = useSearch()
   const [dishes, setDishes] = useState([])
   const [removeloading, setRevomeloading] = useState(false)
+  const { showAlert } = useAlert()
 
   const mealsDishes = dishes.filter((dish) => dish.category === "meals")
   const dessertsDishes = dishes.filter((dish) => dish.category === "desserts")
@@ -71,8 +73,6 @@ export function Home() {
           <Loader />
         )}
       </main>
-
-      {/* <Footer /> */}
     </Container>
   )
 }

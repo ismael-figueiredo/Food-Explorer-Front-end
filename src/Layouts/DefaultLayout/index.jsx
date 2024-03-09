@@ -7,6 +7,8 @@ import { SidebarMenu } from "../../components/SidebarMenu"
 import { Container } from "./styled"
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
+import { Alert } from "../../components/Alert"
+
 
 export function DefaultLayout() {
   const { isAdmin } = useAuth()
@@ -14,6 +16,7 @@ export function DefaultLayout() {
   const { setSearch } = useSearch()
   return (
     <Container>
+      <Alert />
       <Header />
       <MobileHeader />
       <SidebarMenu

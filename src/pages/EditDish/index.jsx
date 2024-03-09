@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { useAlert } from "../../hooks/alert"
 import { api } from "../../service/api"
-import { useAuth } from "../../hooks/auth"
-import { MobileHeader } from "../../components/MobileHeader"
 import { IngredientItem } from "../../components/IngredientItem"
-import { Header } from "../../components/Header"
-import { Footer } from "../../components/Footer"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
+import { Loader } from "../../components/Loader"
 import {
   BackButton,
   Container,
@@ -29,9 +27,11 @@ export function EditDish() {
   const [price, setPrice] = useState("")
   const [description, setDescription] = useState("")
   const [image, setImage] = useState()
+  const [isLoading, setIsLoading] = useState(true)
 
   const navigate = useNavigate()
   const parms = useParams()
+  const { showAlert } = useAlert()
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -52,11 +52,13 @@ export function EditDish() {
     if (confirm) {
       try {
         await api.delete(`/dish/${parms.id}`)
-        alert("Prato deletado com sucesso!")
+        showAlert("Prato deletado com sucesso!", "success")
         navigate("/")
       } catch (error) {
         console.error("Erro ao deletar o prato:", error)
-        alert("Não foi possível deletar o prato.")
+        showAlert("Não foi possível deletar o prato.", "danger")
+      } finally {
+        setIsLoading(false)
       }
     }
   }
@@ -79,13 +81,13 @@ export function EditDish() {
           "Content-Type": "multipart/form-data",
         },
       })
-      alert("Prato atualizado com sucesso")
+      showAlert("Prato atualizado com sucesso", "success")
       navigate("/")
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
       } else {
-        alert("Não foi possível cadastrar.")
+        showAlert("Não foi possível atualizar.", "danger")
       }
     }
   }
@@ -102,15 +104,19 @@ export function EditDish() {
         setPrice(dish.price)
         setDescription(dish.description)
       } catch (error) {
-        console.error("Erro ao buscar o prato:", error)
+        showAlert(error, "danger")
+      } finally {
+        setIsLoading(false)
       }
     }
     fetchDish()
   }, [parms.id])
-
+  
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <Container>
-     
       <Form onSubmit={handleSubmit}>
         <BackButton onClick={() => navigate("/")}>
           <LuChevronLeft />
@@ -210,8 +216,6 @@ export function EditDish() {
           />
         </div>
       </Form>
-
-    
     </Container>
   )
 }

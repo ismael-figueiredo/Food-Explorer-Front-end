@@ -4,12 +4,19 @@ import { Container, OrderContainer } from "./styles"
 import { aggregateOrdersByName } from "../../utils/aggregateOrdersByName"
 import { Button } from "../../components/Button"
 import { useNavigate } from "react-router-dom"
+import { useAlert } from "../../hooks/alert"
 
 export function Orders() {
   const { orders, removeOrder } = useOrders()
   const aggregatedOrders = aggregateOrdersByName(orders)
 
   const navigate = useNavigate()
+  const { showAlert } = useAlert()
+
+  function handleRemoveOrder(id) {
+    removeOrder(id)
+    showAlert("removido com sucesso", "success")
+  }
   const totalOrderPrice = aggregatedOrders
     .reduce((total, order) => total + order.totalPrice, 0)
     .toFixed(2)
@@ -29,7 +36,9 @@ export function Orders() {
                     <p>{order.description}</p>
                     <span>{` R$ ${order.totalPrice}`}</span>
                   </div>
-                  <button onClick={() => removeOrder(order.id)}>Excluir</button>
+                  <button onClick={() => handleRemoveOrder(order.id)}>
+                    Excluir
+                  </button>
                 </div>
               </OrderContainer>
             ))}

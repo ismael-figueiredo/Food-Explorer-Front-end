@@ -5,6 +5,7 @@ import { IngredientItem } from "../../components/IngredientItem"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
+import { useAlert } from "../../hooks/alert"
 import {
   BackButton,
   Container,
@@ -18,6 +19,7 @@ import {
 
 export function NewDish() {
   const navigate = useNavigate()
+  const {showAlert} = useAlert()
 
   const [newIngredient, setNewIngredient] = useState("")
 
@@ -59,13 +61,13 @@ export function NewDish() {
           "Content-Type": "multipart/form-data",
         },
       })
-      alert("Prato criado com sucesso")
+      showAlert("Prato criado com sucesso","success")
       navigate("/")
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message)
+        showAlert(error.response.data.message,"danger")
       } else {
-        alert("Não foi possível cadastrar.")
+        showAlert("Não foi possível cadastrar.","danger")
       }
     }
   }
