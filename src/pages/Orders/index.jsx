@@ -1,21 +1,22 @@
 import { useOrders } from "../../hooks/orders"
 import { useAlert } from "../../hooks/alert"
-import { Container, OrderContainer } from "./styles"
+import { Container, OrderContainer } from "./styles" 
+import { Button } from "../../components/Button" 
 import { aggregateOrdersByName } from "../../utils/aggregateOrdersByName"
-import { Button } from "../../components/Button"
 
 export function Orders() {
   const { orders, removeOrder } = useOrders()
-  const aggregatedOrders = aggregateOrdersByName(orders)
   const { showAlert } = useAlert()
+  const aggregatedOrders = aggregateOrdersByName(orders)
 
   function handleRemoveOrder(id) {
     removeOrder(id)
-    showAlert("removido com sucesso", "success")
+    showAlert("Removido", "warning")
   }
+
   const totalOrderPrice = aggregatedOrders
     .reduce((total, order) => total + order.totalPrice, 0)
-    .toFixed(2)
+    .toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 
   return (
     <Container>
@@ -30,7 +31,12 @@ export function Orders() {
                   <div>
                     <h3>{`${order.amount}X ${order.name}`}</h3>
                     <p>{order.description}</p>
-                    <span>{` R$ ${order.totalPrice}`}</span>
+                    <span>
+                      {new Intl.NumberFormat("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      }).format(order.totalPrice)}
+                    </span>
                   </div>
                   <button onClick={() => handleRemoveOrder(order.id)}>
                     Excluir
@@ -40,12 +46,11 @@ export function Orders() {
             ))}
           </ul>
           <div>
-            <h3>Total: R$ {totalOrderPrice}</h3>
-
+            <h3>Total: {totalOrderPrice}</h3>
             <Button
-              title={"Avançar"}
+              title="Avançar"
               onClick={() =>
-                alert(
+                showAlert(
                   `Aplicação em versão demo! Para mais detalhes entre em contato (48) 9880-20536.`
                 )
               }

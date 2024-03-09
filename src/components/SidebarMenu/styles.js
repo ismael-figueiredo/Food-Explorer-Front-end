@@ -2,9 +2,8 @@ import styled from "styled-components"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
 export const Container = styled.div`
-  
-  height: 100vh;
-  width: 100%;
+  height: calc(100vh - 4.8rem);
+  width: 80%;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,13 +17,14 @@ export const Container = styled.div`
   &[data-menu-is-open="false"] {
     transform: translateX(-100%);
   }
-
+  border-right: 1px solid ${({ theme }) => theme.COLORS.DARK_1000};
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK_1000};
   background-color: ${({ theme }) => theme.COLORS.DARK_400};
-  display: flex;
-  flex-direction: column;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.8);
+
   header {
     display: flex;
-    height: 7rem;
+    height: 7.1rem;
     align-items: center;
 
     width: 100%;
@@ -54,7 +54,9 @@ export const Container = styled.div`
     }
   }
   > main {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     padding: 2.25rem 1.75rem;
     > button {
       width: 100%;

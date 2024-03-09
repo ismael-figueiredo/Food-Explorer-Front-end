@@ -39,7 +39,8 @@ export function DishCard({
     }
  
     addOrder(orderDetails)
-    showAlert("Adicionado com sucesso!", "success")
+    showAlert("Adicionado!")
+    setAmount(1)
   }
 
   useEffect(() => {

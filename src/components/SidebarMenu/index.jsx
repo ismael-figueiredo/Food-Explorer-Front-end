@@ -1,5 +1,4 @@
 import { Container } from "./styles"
-import { Footer } from "../Footer"
 import { IconInput } from "../IconInput"
 import { LuX, LuSearch } from "react-icons/lu"
 import { useNavigate } from "react-router-dom"
@@ -37,7 +36,7 @@ export function SidebarMenu({ menuIsOpen = false, onCloseMenu, onSearch }) {
 
         {!user && <button>Entrar</button>}
       </main>
-      <Footer />
+    
     </Container>
   )
 }

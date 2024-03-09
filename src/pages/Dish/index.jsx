@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useAuth } from "../../hooks/auth"
+import { useAlert } from "../../hooks/alert"
 import { useOrders } from "../../hooks/orders"
 import { api } from "../../service/api"
 import { PiReceiptBold } from "react-icons/pi"
@@ -19,10 +20,11 @@ import {
 
 export function Dish() {
   const [data, setData] = useState({})
-  const [amount, setAmount] = useState(1) 
+  const [amount, setAmount] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
   const { isAdmin } = useAuth()
   const { addOrder } = useOrders()
+  const { showAlert } = useAlert()
 
   const navigate = useNavigate()
   const params = useParams()
@@ -33,9 +35,9 @@ export function Dish() {
         const response = await api.get(`/dish/${params.id}`)
         setData(response.data)
       } catch (error) {
-        console.error("Erro ao buscar dados do prato:", error)
+        showAlert(error,"danger")
       } finally {
-        setIsLoading(false) 
+        setIsLoading(false)
       }
     }
 
@@ -52,9 +54,10 @@ export function Dish() {
         image: `${api.defaults.baseURL}/files/${data.image}`,
         description: data.description,
       }
-     
 
       addOrder(orderDetails)
+      showAlert("Adicionado!")
+      setAmount(1)
     }
   }
 
@@ -67,9 +70,9 @@ export function Dish() {
     const price = parseFloat(data.price?.replace(",", ".") || 0)
     return (price * amount).toFixed(2)
   }
- if (isLoading) {
-   return <Loader /> 
- }
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <Container>
       <Main>
