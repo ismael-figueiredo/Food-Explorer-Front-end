@@ -14,13 +14,15 @@ export const Container = styled.div`
   transform: translateX(0);
   transition: transform 0.3s ease-in-out;
 
+  &[data-menu-is-open="true"] {
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.8);
+  }
   &[data-menu-is-open="false"] {
     transform: translateX(-100%);
   }
   border-right: 1px solid ${({ theme }) => theme.COLORS.DARK_1000};
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK_1000};
   background-color: ${({ theme }) => theme.COLORS.DARK_400};
-  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.8);
 
   header {
     display: flex;
