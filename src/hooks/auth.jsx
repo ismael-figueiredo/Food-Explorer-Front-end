@@ -11,18 +11,22 @@ export function AuthProvider({ children }) {
       const response = await api.post("/session", { email, password })
       const { user, token } = response.data
 
-      const isAdmin = user.role === "admin" 
+      const isAdmin = user.role === "admin"
 
       localStorage.setItem("@FoodExplorer:user", JSON.stringify(user))
       localStorage.setItem("@FoodExplorer:token", token)
 
       api.defaults.headers.authorization = `Bearer ${token}`
-      setData({ user, token, isAdmin }) 
+      setData({ user, token, isAdmin })
+      const message = "Seja bem vindo"
+      return message
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message)
+        const errorMessage = error.response.data.message
+        return errorMessage
       } else {
-        alert("Não foi possível entrar.")
+        const message = "Não foi possível entrar."
+        return message
       }
     }
   }
@@ -39,10 +43,10 @@ export function AuthProvider({ children }) {
 
     if (token && user) {
       const userData = JSON.parse(user)
-      const isAdmin = userData.role === "admin" 
+      const isAdmin = userData.role === "admin"
 
       api.defaults.headers.authorization = `Bearer ${token}`
-      setData({ token, user: userData, isAdmin }) 
+      setData({ token, user: userData, isAdmin })
     }
   }, [])
 
