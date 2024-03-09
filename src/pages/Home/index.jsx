@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
+import { useAlert } from "../../hooks/alert"
+import { useSearch } from "../../hooks/search"
 import { api } from "../../service/api"
 import { Container } from "./styles"
 import { Carousel } from "../../components/Carousel"
 import { Loader } from "../../components/Loader"
-import { useSearch } from "../../hooks/search"
 import MobileMacarons from "../../assets/macarons.png"
 import Macarons from "../../assets/macarons2.png"
-import { useAlert } from "../../hooks/alert"
 
 export function Home() {
   

@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useAlert } from "../../hooks/alert"
 import { api } from "../../service/api"
 import { IngredientItem } from "../../components/IngredientItem"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { LuUpload, LuChevronLeft, LuChevronDown } from "react-icons/lu"
-import { useAlert } from "../../hooks/alert"
 import {
   BackButton,
   Container,

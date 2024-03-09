@@ -22,7 +22,7 @@ export const Container = styled.div`
   position: fixed;
   z-index: 4;
   top: 5rem;
-  right:0rem;
+  right: 0rem;
   width: 20rem;
   height: 5rem;
   border-radius: 5px;
@@ -30,9 +30,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  color: ${({ theme }) => theme.COLORS.LIGHT_300};
+  background-color: ${({ theme }) => theme.COLORS.DARK_300};
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  animation: ${slideIn} 0.5s forwards; 
+  animation: ${slideIn} 0.5s forwards;
   ${({ $type }) => {
     switch ($type) {
       case "danger":

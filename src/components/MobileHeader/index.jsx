@@ -1,9 +1,8 @@
+import { useNavigate } from "react-router-dom"
+import { useOrders } from "../../hooks/orders"
 import { Container } from "./styles"
 import { LuMenu } from "react-icons/lu"
 import { MobileReceiptButton } from "../MobileReceiptButton"
-import { useNavigate } from "react-router-dom"
-import { useOrders } from "../../hooks/orders"
-
 import Logo from "../../assets/logo.png"
 
 export function MobileHeader({ isAdmin = false, onOpenMenu, ...rest }) {

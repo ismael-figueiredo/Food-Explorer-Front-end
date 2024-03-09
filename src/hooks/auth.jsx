@@ -18,16 +18,14 @@ export function AuthProvider({ children }) {
 
       api.defaults.headers.authorization = `Bearer ${token}`
       setData({ user, token, isAdmin })
-      const message = "Seja bem vindo"
-      return message
+
+      return { success: true, message: "Seja bem-vindo!" }
     } catch (error) {
-      if (error.response) {
-        const errorMessage = error.response.data.message
-        return errorMessage
-      } else {
-        const message = "Não foi possível entrar."
-        return message
+      let errorMessage = "Não foi possível entrar."
+      if (error.response && error.response.data.message) {
+        errorMessage = error.response.data.message
       }
+      return { success: false, message: errorMessage }
     }
   }
 

@@ -1,16 +1,12 @@
-import React from "react"
 import { useOrders } from "../../hooks/orders"
+import { useAlert } from "../../hooks/alert"
 import { Container, OrderContainer } from "./styles"
 import { aggregateOrdersByName } from "../../utils/aggregateOrdersByName"
 import { Button } from "../../components/Button"
-import { useNavigate } from "react-router-dom"
-import { useAlert } from "../../hooks/alert"
 
 export function Orders() {
   const { orders, removeOrder } = useOrders()
   const aggregatedOrders = aggregateOrdersByName(orders)
-
-  const navigate = useNavigate()
   const { showAlert } = useAlert()
 
   function handleRemoveOrder(id) {

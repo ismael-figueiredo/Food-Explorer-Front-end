@@ -1,7 +1,7 @@
+import { useNavigate } from "react-router-dom"
 import { Container } from "./styles"
 import Logo from "../../assets/logo.png"
 import { Button } from "../../components/Button"
-import { useNavigate } from "react-router-dom"
 
 export function ErrorPage() {
   const navigate = useNavigate()

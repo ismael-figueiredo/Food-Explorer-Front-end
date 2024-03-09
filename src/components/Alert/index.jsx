@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
+import { useAlert } from "../../hooks/alert"
 import { IoMdClose } from "react-icons/io"
 import { LuInfo, LuCheck, LuXOctagon } from "react-icons/lu"
 import { Container, Message, ProgressBar, CloseButton } from "./styles"
-import { useAlert } from "../../hooks/alert"
 
 export function Alert() {
   const { alert, hideAlert } = useAlert()
@@ -23,7 +23,6 @@ export function Alert() {
           return currentProgress
         })
       }, 100)
-      
     } else {
       clearInterval(intervalId)
     }
@@ -37,7 +36,7 @@ export function Alert() {
       setTimeout(() => {
         setIsClosing(false)
         hideAlert()
-      }, 500) 
+      }, 500)
     }
   }, [progress])
 
@@ -46,7 +45,7 @@ export function Alert() {
     setTimeout(() => {
       setIsClosing(false)
       hideAlert()
-    }, 100) 
+    }, 100)
   }
 
   if (!visible && !isClosing) return null
@@ -70,7 +69,7 @@ export function Alert() {
       <Message>{message}</Message>
       <ProgressBar $progress={progress} $type={type} />
       <CloseButton onClick={handleCloseClick}>
-        <IoMdClose color="white" size="1.5em"/>
+        <IoMdClose color="white" size="1.5em" />
       </CloseButton>
     </Container>
   )

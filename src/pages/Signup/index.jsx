@@ -1,10 +1,11 @@
+import { useNavigate } from "react-router-dom"
+import { useAlert } from "../../hooks/alert"
+import { useState } from "react"
+import { api } from "../../service/api"
 import { Container } from "./styles"
 import { Logo } from "../../components/Logo"
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input"
-import { useState } from "react"
-import { api } from "../../service/api"
-import { useNavigate } from "react-router-dom"
 
 export function Signup() {
   const [name, setName] = useState("")
@@ -12,6 +13,7 @@ export function Signup() {
   const [password, setPasswoerd] = useState("")
 
   const navigate = useNavigate()
+  const { showAlert } = useAlert()
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -19,20 +21,20 @@ export function Signup() {
 
   function handleSignup() {
     if (!name || !email || !password) {
-      return alert("preencha todos os campos.")
+      return showAlert("Preencha todos os campos!", "warning")
     }
 
     api
       .post("/users", { name, email, password })
       .then(() => {
-        alert("Usuário cadastrado com sucesso.")
+        showAlert("Usuário cadastrado com sucesso.")
         navigate("/")
       })
       .catch((error) => {
         if (error.response) {
-          alert(error.response.data.message)
+          showAlert(error.response.data.message, "warning")
         } else {
-          alert("Não foi possivel cadastrar")
+          showAlert("Não foi possivel cadastrar", "danger")
         }
       })
   }
