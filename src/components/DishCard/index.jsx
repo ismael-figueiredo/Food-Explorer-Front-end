@@ -35,7 +35,7 @@ export function DishCard({
       image,
       description,
     }
-
+ 
     addOrder(orderDetails)
   }
 

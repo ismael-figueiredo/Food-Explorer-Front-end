@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useAuth } from "../../hooks/auth"
 import { useOrders } from "../../hooks/orders"
 import { api } from "../../service/api"
 import { PiReceiptBold } from "react-icons/pi"
 import { LuPlus, LuMinus, LuChevronLeft } from "react-icons/lu"
-import { Loader } from "../../components/Loader" // Ensure you have a Loader component
+import { Loader } from "../../components/Loader"
 import {
   Container,
   BackButton,
@@ -19,28 +19,28 @@ import {
 
 export function Dish() {
   const [data, setData] = useState({})
-  const [amount, setAmount] = useState(1)
-  const [isLoading, setIsLoading] = useState(true) // Initialize loading state
-
+  const [amount, setAmount] = useState(1) 
+  const [isLoading, setIsLoading] = useState(true)
   const { isAdmin } = useAuth()
   const { addOrder } = useOrders()
+
   const navigate = useNavigate()
-  const { id } = useParams()
+  const params = useParams()
 
   useEffect(() => {
     async function fetchDish() {
       try {
-        const response = await api.get(`/dish/${id}`)
+        const response = await api.get(`/dish/${params.id}`)
         setData(response.data)
       } catch (error) {
         console.error("Erro ao buscar dados do prato:", error)
       } finally {
-        setIsLoading(false) // Set loading to false once data is fetched
+        setIsLoading(false) 
       }
     }
 
     fetchDish()
-  }, [id])
+  }, [params.id])
 
   const includeInOrder = () => {
     if (data && data.id) {
@@ -49,9 +49,10 @@ export function Dish() {
         name: data.name,
         amount,
         price: data.price,
-        image: data.image,
+        image: `${api.defaults.baseURL}/files/${data.image}`,
         description: data.description,
       }
+     
 
       addOrder(orderDetails)
     }
@@ -66,11 +67,9 @@ export function Dish() {
     const price = parseFloat(data.price?.replace(",", ".") || 0)
     return (price * amount).toFixed(2)
   }
-
-  if (isLoading) {
-    return <Loader /> // Render loader while data is loading
-  }
-
+ if (isLoading) {
+   return <Loader /> 
+ }
   return (
     <Container>
       <Main>
@@ -103,6 +102,9 @@ export function Dish() {
               </button>
               <button onClick={includeInOrder}>
                 <PiReceiptBold size="1.5rem" /> Pedir • R$ {totalPrice()}
+              </button>
+              <button onClick={includeInOrder}>
+                incluir • R$ {totalPrice()}
               </button>
             </Controls>
           )}
